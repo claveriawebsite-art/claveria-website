@@ -490,7 +490,7 @@ def index_page():
     </div>
   </section>
   <section class="hero">
-    <div class="hero-bg"><picture><source media="(max-width: 720px)" srcset="assets/img/staycation/hiraya-farm-escape/1.jpg"><img src="assets/img/brand/hero.jpg" alt="Claveria highlands and visitor destinations" fetchpriority="high" decoding="async"></picture></div>
+    <div class="hero-bg"><picture><source media="(max-width: 720px)" srcset="assets/img/brand/hero-mobile.jpg"><img src="assets/img/brand/hero.jpg" width="1920" height="946" alt="Municipality of Claveria in Misamis Oriental" fetchpriority="high" decoding="async"></picture></div>
     <div class="hero-content">
       <h1>Escape to <em>Claveria</em></h1>
       <p class="sub">Cool mountain air, hidden waterfalls, cozy cabins and the best café stops along Route 955 — your complete guide to Claveria, Misamis Oriental.</p>
