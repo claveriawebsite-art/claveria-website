@@ -6,13 +6,26 @@
   var burger = document.querySelector(".burger");
   var links = document.querySelector(".nav-links");
   if (burger && links) {
+    function setMenu(open) {
+      links.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
     burger.addEventListener("click", function () {
-      links.classList.toggle("open");
-      burger.classList.toggle("x");
+      setMenu(burger.getAttribute("aria-expanded") !== "true");
     });
     links.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") links.classList.remove("open");
+      if (e.target.closest("a")) setMenu(false);
     });
+    document.addEventListener("click", function (e) {
+      if (!burger.contains(e.target) && !links.contains(e.target)) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setMenu(false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 720) setMenu(false);
+    }, { passive: true });
   }
 
   /* card search filter (category pages) */

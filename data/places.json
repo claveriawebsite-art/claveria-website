@@ -9,25 +9,25 @@
     "staycation": {
       "title": "Staycations & Resorts",
       "slug": "staycation",
-      "icon": "🏕️",
+      "icon": "",
       "blurb": "Cabins, campsites, farm resorts and vacation houses in the Claveria highlands."
     },
     "falls": {
       "title": "Waterfalls",
       "slug": "falls",
-      "icon": "💧",
+      "icon": "",
       "blurb": "Cool, refreshing falls scattered across Claveria's barangays."
     },
     "cafes": {
       "title": "Coffee Shops & Restaurants",
       "slug": "cafes",
-      "icon": "☕",
+      "icon": "",
       "blurb": "Café stops and resto-bars perfect for breaks along Route 955."
     },
     "hotlines": {
       "title": "Emergency Hotlines",
       "slug": "hotlines",
-      "icon": "🚨",
+      "icon": "",
       "blurb": "Keep these Claveria emergency numbers handy while you travel."
     }
   },
@@ -48,19 +48,19 @@
       ],
       "extras": [
         [
-          "🏕️ Camping",
+          "Camping",
           "Exclusive campground — 1 group per day only"
         ],
         [
-          "👥 Rates",
+          "Rates",
           "Family (up to 6 pax) ₱4,499 · Small Group (7–10) ₱5,499 · Big Group (11–14) ₱6,499 · Fun Crowd (15–18) ₱7,499 · Balangay Crowd (19–22) ₱8,899 · Comunidad Crowd (23–26) ₱10,399 · Tapok Crowd (27–30) ₱12,000"
         ],
         [
-          "🎁 Inclusions",
+          "Inclusions",
           "FREE breakfast & sikwate · FREE videoke"
         ],
         [
-          "💳 Booking",
+          "Booking",
           "50% downpayment upon reservation"
         ]
       ],
@@ -95,15 +95,15 @@
       ],
       "extras": [
         [
-          "📶 Amenities",
+          "Amenities",
           "Strong WiFi connection"
         ],
         [
-          "📍 Near",
+          "Near",
           "Very close to many tourist spots along the Claveria–Gingoog route"
         ],
         [
-          "💳 Booking",
+          "Booking",
           "DM their page or contact 0926 927 6709"
         ]
       ],
@@ -137,11 +137,11 @@
       ],
       "extras": [
         [
-          "🕑 Check-in",
+          "Check-in",
           "2:00 PM"
         ],
         [
-          "🕚 Check-out",
+          "Check-out",
           "11:00 AM"
         ]
       ],
@@ -175,7 +175,7 @@
       ],
       "extras": [
         [
-          "🏊 Amenities",
+          "Amenities",
           "Swimming pool with an overlooking view, spacious areas for family gatherings and overnight stays"
         ]
       ],
@@ -209,15 +209,15 @@
       ],
       "extras": [
         [
-          "🎟️ Entrance",
+          "Entrance",
           "₱30"
         ],
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Sunday, 8:00 AM – 5:00 PM"
         ],
         [
-          "🎡 Activities",
+          "Activities",
           "ATV rides, go-karting, horseback riding, rainbow slides, family-friendly recreation"
         ]
       ],
@@ -261,7 +261,7 @@
       ],
       "extras": [
         [
-          "⛺ Overnight camping",
+          "Overnight camping",
           "₱600 good for 2–3 persons · ₱800 good for 4 persons — tent, foam and pillows provided · 1:00 PM – 10:00 AM"
         ]
       ],
@@ -305,11 +305,11 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "8:00 AM – 6:00 PM · Open Friday, Saturday, Sunday & Monday · Closed Tuesday–Thursday"
         ],
         [
-          "🎟️ Entrance",
+          "Entrance",
           "₱50 (day tour)"
         ]
       ],
@@ -343,7 +343,7 @@
       ],
       "extras": [
         [
-          "🎟️ Entrance & sightseeing",
+          "Entrance & sightseeing",
           "₱50.00"
         ]
       ],
@@ -375,7 +375,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Always open"
         ]
       ],
@@ -419,19 +419,19 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "8:00 AM – 6:00 PM daily"
         ],
         [
-          "🏊 Day tour / pool",
+          "Day tour / pool",
           "₱200 per adult"
         ],
         [
-          "🕛 Check-in/out",
+          "Check-in/out",
           "Check-in 12:00 PM · Check-out 10:00 AM next day"
         ],
         [
-          "⛺ Fees",
+          "Fees",
           "Extra person ₱500 per head · ₱500 per overnight tent"
         ]
       ],
@@ -469,15 +469,15 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Sunday, 8:00 AM – 5:00 PM"
         ],
         [
-          "🎟️ Entrance",
+          "Entrance",
           "₱30 per adult"
         ],
         [
-          "🪑 Table rentals",
+          "Table rentals",
           "₱1,200 (fits 6) · ₱1,300 (fits 10)"
         ]
       ],
@@ -517,11 +517,11 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Always open (24 hours)"
         ],
         [
-          "💳 Booking",
+          "Booking",
           "Contact staff for room rates and direct bookings"
         ]
       ],
@@ -561,15 +561,15 @@
       ],
       "extras": [
         [
-          "🕑 Check-in/out",
+          "Check-in/out",
           "Check-in 2:00 PM · Check-out 12:00 noon"
         ],
         [
-          "🏠 Overnight",
+          "Overnight",
           "Regular Cabin (2 pax, max 4) ₱3,500 · Family Cabin (6 pax, max 10) ₱7,500 · Exclusive (18–20 pax) ₱15,000 · Stove usage ₱350"
         ],
         [
-          "☀️ Day tour",
+          "Day tour",
           "₱50/head photos only · ₱250/head adults with pool · ₱100/head kids 4–12 · Free 3 y/o & below · 9:00 AM – 5:00 PM (walk-ins only if not fully booked)"
         ]
       ],
@@ -608,19 +608,19 @@
       ],
       "extras": [
         [
-          "☀️ Daytime walk-in",
+          "Daytime walk-in",
           "₱30 per person"
         ],
         [
-          "🏠 Overnight rooms",
+          "Overnight rooms",
           "₱2,000 – ₱6,000 depending on type (Bamboo Kubo with CR, Payag Amakan, Rest Houses with TV/videoke)"
         ],
         [
-          "⛺ Tent rentals",
+          "Tent rentals",
           "₱500 (small, 2 pax) up to ₱2,000 (big/barkada, up to 8 pax)"
         ],
         [
-          "🌄 Whole-area rental",
+          "Whole-area rental",
           "₱35,000 for an exclusive 24-hour overnight stay"
         ]
       ],
@@ -647,7 +647,7 @@
       "contact": [],
       "extras": [
         [
-          "🎟️ Entrance",
+          "Entrance",
           "No entrance fee"
         ]
       ],
@@ -677,7 +677,7 @@
       ],
       "extras": [
         [
-          "🎟️ Entrance",
+          "Entrance",
           "₱75"
         ]
       ],
@@ -702,7 +702,7 @@
       "contact": [],
       "extras": [
         [
-          "⚠️ Status",
+          "Status",
           "Temporarily closed — check before visiting"
         ]
       ],
@@ -726,7 +726,7 @@
       "contact": [],
       "extras": [
         [
-          "🎟️ Entrance",
+          "Entrance",
           "No entrance fee"
         ]
       ],
@@ -752,11 +752,11 @@
       "contact": [],
       "extras": [
         [
-          "🎟️ Entrance",
+          "Entrance",
           "₱10 all ages"
         ],
         [
-          "🛖 Cottages",
+          "Cottages",
           "Small ₱250 · Big ₱500"
         ]
       ],
@@ -782,7 +782,7 @@
       "contact": [],
       "extras": [
         [
-          "🎟️ Entrance",
+          "Entrance",
           "₱200 — includes free Kibolag Falls access and a free ride on the way to the entrance"
         ]
       ],
@@ -814,7 +814,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Daily, 6:00 AM – 5:30 PM (some directories list until 6:00 PM)"
         ]
       ],
@@ -876,7 +876,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "10:30 AM – 7:30 PM, Wednesday–Sunday · Closed Tuesday (Monday hours to be confirmed)"
         ]
       ],
@@ -940,7 +940,7 @@
       ],
       "extras": [
         [
-          "🏔️ Staycation",
+          "Staycation",
           "Also operates as an eco-tourism mini-resort — booking & hotline contacts above"
         ]
       ],
@@ -979,7 +979,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Sunday, 10:00 AM – 8:00 PM"
         ]
       ],
@@ -1018,7 +1018,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Wednesday & Thursday, 9:00 AM – 8:00 PM · Closed Monday & Tuesday"
         ]
       ],
@@ -1049,7 +1049,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Sunday, 7:00 AM – 5:00 PM · Closed Tuesday"
         ]
       ],
@@ -1087,7 +1087,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Friday, 10:00 AM – 8:00 PM · Saturday–Sunday, 8:00 AM – 8:00 PM"
         ]
       ],
@@ -1130,7 +1130,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Open 24/7"
         ]
       ],
@@ -1168,7 +1168,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Sunday, 6:00 AM – 7:30 PM"
         ]
       ],
@@ -1217,7 +1217,7 @@
       ],
       "extras": [
         [
-          "🕗 Hours",
+          "Hours",
           "Monday–Thursday, 7:00 AM – 9:00 PM · Friday–Sunday, 6:00 AM – 9:00 PM"
         ]
       ],

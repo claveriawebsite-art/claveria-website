@@ -1,54 +1,42 @@
-# 🌿 Claveria Escape
+# Claveria Escape
 
-A community tourism website for **Claveria, Misamis Oriental, Philippines** — staycations & resorts, waterfalls, coffee shops & restaurants, and emergency hotlines along scenic **Route 955**.
+A community tourism guide to Claveria, Misamis Oriental, Philippines — staycations and resorts, waterfalls, cafés and restaurants, and emergency hotlines along Route 955.
 
-Built 100% from the content of the [Claveria Escape Google Drive folder](https://drive.google.com/drive/u/1/folders/16dP8wM5esssPabmrOSprLUBkZwjeTtGK) (descriptions, rates, contacts, photos, logo & homepage image).
+Built from the [Claveria Escape Google Drive folder](https://drive.google.com/drive/u/1/folders/16dP8wM5esssPabmrOSprLUBkZwjeTtGK), including its place descriptions, rates, contacts, photographs, logo and homepage image.
 
-## ✨ Features
-- 🏕️ **14 staycations & resorts** · 💧 **6 waterfalls** · ☕ **12 cafés & restaurants** · 🚨 **10 emergency hotlines**
-- Full photo galleries per spot with a lightbox viewer
-- Per-place pages with location (Google Maps link), contacts (tap-to-call), rates, hours & "about"
-- Live search/filter on every category page
-- Fully static — no build step, no backend; deploys anywhere (Vercel, Netlify, GitHub Pages)
+## Features
+- 14 staycations and resorts, 6 waterfalls, 12 cafés and restaurants, and 10 emergency hotline contacts
+- 32 place-detail pages with photo galleries, maps links, contact actions, rates and hours
+- Category search, photo lightbox and tap-to-call hotline cards
+- Mobile-first responsive layouts, touch-friendly controls, safe-area support and an accessible collapsible menu
+- Decorative emoji removed from the site UI in favor of photography, typography and clear labels
+- Static HTML, CSS and JavaScript; no server or build service required to serve the site
 
-## 📁 Structure
+## Project structure
 ```
-index.html            # homepage (hero = Municipality of Claveria photo)
-staycation.html       # category: staycations & resorts
-falls.html            # category: waterfalls
-cafes.html            # category: coffee shops & restaurants
-hotlines.html         # emergency hotlines (tap-to-call)
-place/<slug>.html     # one detail page per spot (32 pages)
-assets/css/style.css  # styles (Claveria green theme from the logo)
-assets/js/main.js     # nav, search, lightbox, reveal animations
-assets/img/...        # optimized photos (135 images, WebP-ready JPEGs)
-data/places.json      # all content as structured data
-tools/                # build scripts (download, process, generate)
+index.html            # homepage
+staycation.html       # staycations and resorts
+falls.html            # waterfalls
+cafes.html            # cafés and restaurants
+hotlines.html         # emergency hotlines
+place/<slug>.html     # 32 detail pages
+assets/css/style.css  # responsive styles
+assets/js/main.js     # navigation, search, lightbox and reveal behavior
+assets/img/...        # optimized photos and brand assets
+data/places.json      # structured place data
+tools/                # image and site-generation scripts
 sitemap.xml
 ```
 
-## 🚀 Run locally
+## Run locally
 ```bash
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## 🔧 Rebuild
+## Rebuild
 ```bash
-python3 tools/download.py        # fetch images from Google Drive (needs public files)
-python3 tools/process_images.py  # optimize into assets/img
-python3 tools/build.py           # generate all HTML pages + sitemap + data/places.json
+python3 tools/build.py
 ```
 
-## 🌐 Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/claveriawebsite-art/claveria-website)
-
-The site is live at **https://claveria-website.vercel.app**. The production project is `claveria-website` in the [claveria1 Vercel workspace](https://vercel.com/claveria1). The initial deployment was created from the pushed GitHub commit.
-
-To enable **automatic deployments on each push** (the existing Vercel project is not yet connected to GitHub):
-1. Open [Project Settings → Git](https://vercel.com/claveria1/claveria-website/settings/git).
-2. Choose **Connect Git Repository** and select `claveriawebsite-art/claveria-website`.
-3. If prompted, install/authorize the Vercel GitHub App for the repository. Keep `main` as the production branch.
-
-Static site, zero build config — `vercel.json` only adds clean URLs + cache headers.
+The generated site is currently served at [claveria-website-ovus.vercel.app](https://claveria-website-ovus.vercel.app). The Vercel project is in the [claveria1 workspace](https://vercel.com/claveria1); GitHub status checks report Vercel deployments for commits on the repository.

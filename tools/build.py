@@ -4,6 +4,7 @@ import html
 import json
 import os
 import re
+import unicodedata
 from urllib.parse import quote
 
 from site_data import SITE, CATEGORIES, PLACES, HOTLINES, HOTLINE_GROUPS
@@ -12,8 +13,34 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 IMG = os.path.join(ROOT, "assets", "img")
 
 
+def plain(s):
+    """Drop decorative emoji/symbol glyphs from user-facing copy."""
+    cleaned = []
+    for ch in str(s):
+        code = ord(ch)
+        category = unicodedata.category(ch)
+        if category == "So" or category == "Cf" or ch in "\ufe0e\ufe0f\u20e3":
+            continue
+        if 0x1F3FB <= code <= 0x1F3FF or 0xE0020 <= code <= 0xE007F:
+            continue
+        cleaned.append(ch)
+    return "".join(cleaned).strip()
+
+
 def esc(s):
-    return html.escape(str(s), quote=True)
+    return html.escape(plain(s), quote=True)
+
+
+def clean_data(value):
+    if isinstance(value, str):
+        return plain(value)
+    if isinstance(value, list):
+        return [clean_data(item) for item in value]
+    if isinstance(value, tuple):
+        return [clean_data(item) for item in value]
+    if isinstance(value, dict):
+        return {key: clean_data(item) for key, item in value.items()}
+    return value
 
 
 def maps_url(q):
@@ -49,7 +76,7 @@ def header(prefix, active):
         ("staycation.html", "Staycations", "staycation"),
         ("falls.html", "Falls", "falls"),
         ("cafes.html", "Cafés & Restos", "cafes"),
-        ("hotlines.html", "🚨 Hotlines", "hotlines"),
+        ("hotlines.html", "Hotlines", "hotlines"),
     ]
     nav = "".join(
         f'<a href="{prefix}{href}" class="{"active" if act == active else ""} {"hot" if act == "hotlines" else ""}">{label}</a>'
@@ -61,8 +88,8 @@ def header(prefix, active):
       <img src="{prefix}assets/img/brand/logo.png" alt="Claveria Escape logo" width="46" height="46">
       <span class="brand-text">Claveria Escape<small>Misamis Oriental</small></span>
     </a>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <nav class="nav-links">{nav}</nav>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">{nav}</nav>
   </div>
 </header>'''
 
@@ -82,29 +109,29 @@ def footer(prefix):
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="{prefix}staycation.html">🏕️ Staycations & Resorts</a></li>
-          <li><a href="{prefix}falls.html">💧 Waterfalls</a></li>
-          <li><a href="{prefix}cafes.html">☕ Coffee Shops & Restaurants</a></li>
-          <li><a href="{prefix}hotlines.html">🚨 Emergency Hotlines</a></li>
+          <li><a href="{prefix}staycation.html">Staycations & Resorts</a></li>
+          <li><a href="{prefix}falls.html">Waterfalls</a></li>
+          <li><a href="{prefix}cafes.html">Coffee Shops & Restaurants</a></li>
+          <li><a href="{prefix}hotlines.html">Emergency Hotlines</a></li>
         </ul>
       </div>
       <div>
         <h4>Good to know</h4>
         <ul>
-          <li>📍 Municipality of Claveria, Misamis Oriental, Philippines</li>
-          <li>🛣️ Most spots are along Route 955 (Gingoog–Claveria Road)</li>
-          <li>🌡️ Highland weather — bring a jacket, it gets cold & misty</li>
-          <li>📞 Save the <a href="{prefix}hotlines.html">emergency hotlines</a> before you go</li>
+          <li>Municipality of Claveria, Misamis Oriental, Philippines</li>
+          <li>Most spots are along Route 955 (Gingoog–Claveria Road)</li>
+          <li>Highland weather can be cold and misty — bring a jacket</li>
+          <li>Save the <a href="{prefix}hotlines.html">emergency hotlines</a> before you go</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© {year} Claveria Escape — community tourism guide. Content compiled from the Claveria Escape community Drive folder.</span>
-      <span>Made with 💚 in Claveria, Misamis Oriental</span>
+      <span>A community guide from Claveria, Misamis Oriental</span>
     </div>
   </div>
 </footer>
-<button class="back-top" aria-label="Back to top">↑</button>'''
+<button class="back-top" aria-label="Back to top">Top</button>'''
 
 
 def head(title, description, prefix, og=True):
@@ -112,7 +139,8 @@ def head(title, description, prefix, og=True):
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#024023">
 <title>{esc(title)} · Claveria Escape</title>
 <meta name="description" content="{esc(description)}">
 <meta property="og:title" content="{esc(title)} · Claveria Escape">
@@ -136,17 +164,16 @@ def scripts(prefix):
 def place_card(p, prefix):
     imgs = place_images(p)
     thumb = imgs[0] if imgs else None
-    cat = CATEGORIES[p["category"]]
-    badge = "⚠️ " + p["tags"][1] if p["slug"] == "twin-falls" else cat["icon"] + " " + cat["title"].split(" ")[0] if False else cat["icon"]
     warn = ' warn' if p["slug"] == "twin-falls" else ""
     badge_txt = "Temporarily closed" if p["slug"] == "twin-falls" else f"{len(imgs)} photos" if imgs else ""
-    img_html = f'<img src="{prefix}{thumb}" alt="{esc(p["name"])}" loading="lazy">' if thumb else ""
+    badge_html = f'<span class="badge{warn}">{esc(badge_txt)}</span>' if badge_txt else ""
+    img_html = f'<img src="{prefix}{thumb}" alt="{esc(p["name"])}" loading="lazy" decoding="async">' if thumb else ""
     return f'''<a class="place-card reveal" href="{prefix}place/{p["slug"]}.html">
-  <div class="thumb">{img_html}<span class="badge{'' if not warn else ' warn'}">{esc(badge_txt)}</span></div>
+  <div class="thumb">{img_html}{badge_html}</div>
   <div class="body">
     <h3>{esc(p["name"])}</h3>
     <span class="tagline">{esc(p["tagline"])}</span>
-    <span class="loc">{PIN} {esc(p["location"])}</span>
+    <span class="loc">{esc(p["location"])}</span>
   </div>
 </a>'''
 
@@ -161,15 +188,14 @@ def category_page(cat_key):
     <div class="wrap">
       <div class="section-head">
         <div>
-          <span class="eyebrow">{cat['icon']} {esc(cat['title'])}</span>
-          <h2>{cat['icon']} {esc(cat['title'])}</h2>
+          <span class="eyebrow">Explore Claveria</span>
+          <h2>{esc(cat['title'])}</h2>
           <p>{esc(cat['blurb'])}</p>
         </div>
         <span class="chip">{len(places)} places</span>
       </div>
       <div class="search-bar">
-        {SEARCH}
-        <input id="place-search" type="search" placeholder="Search {esc(cat['title'].lower())}… (name, barangay, tag)" autocomplete="off">
+        <input id="place-search" type="search" placeholder="Search {esc(cat['title'].lower())} by name, barangay or tag" autocomplete="off">
       </div>
       <div class="card-grid" id="card-grid">
 {cards}
@@ -189,25 +215,26 @@ def place_page(p):
     gallery = ""
     for i, src in enumerate(imgs):
         cls = "g-main" if i == 0 else ""
-        gallery += f'<figure class="{cls}"><img src="{prefix}{src}" alt="{esc(p["name"])} photo {i+1}" loading="{"eager" if i==0 else "lazy"}"></figure>'
+        gallery += f'<figure class="{cls}"><img src="{prefix}{src}" alt="{esc(p["name"])} photo {i+1}" loading="{"eager" if i==0 else "lazy"}" decoding="async"></figure>'
     if not gallery:
         gallery = '<figure class="g-main"><img src="../assets/img/brand/og.jpg" alt="Claveria"></figure>'
 
     contacts = ""
     for label, value, href in p["contact"]:
-        contacts += f'<a class="contact-link" href="{esc(href)}"><span><small>{esc(label)}</small><br>{esc(value)}</span>{PHONE}</a>'
+        action = "Call" if href.startswith("tel:") else "Email" if href.startswith("mailto:") else "Message" if "wa.me" in href else "Open"
+        contacts += f'<a class="contact-link" href="{esc(href)}"><span><small>{esc(label)}</small><br>{esc(value)}</span><span class="contact-action">{action}</span></a>'
     if not contacts:
         contacts = '<p style="color:var(--muted);font-size:.92rem">No direct contact listed — ask locals or check their Facebook page.</p>'
 
     extras = ""
     for label, text in p["extras"]:
-        extras += f'<div class="info-block"><div class="label">{INFO["tag"]} {esc(label)}</div><p>{esc(text)}</p></div>'
+        extras += f'<div class="info-block"><div class="label">{esc(label)}</div><p>{esc(text)}</p></div>'
 
     tags = "".join(f'<span class="chip">#{esc(t)}</span>' for t in p["tags"])
     related = [q for q in PLACES if q["category"] == p["category"] and q["slug"] != p["slug"]][:3]
     related_cards = "\n".join(place_card(q, "../") for q in related)
 
-    warn_chip = '<span class="chip warn">⚠️ Temporarily closed</span>' if p["slug"] == "twin-falls" else ""
+    warn_chip = '<span class="chip warn">Temporarily closed</span>' if p["slug"] == "twin-falls" else ""
     body = f'''{header(prefix, p["category"])}
 <main>
   <div class="wrap">
@@ -216,7 +243,7 @@ def place_page(p):
       <h1>{esc(p["name"])}</h1>
       <p class="tagline">{esc(p["tagline"])}</p>
       <div class="meta-row">
-        <span class="chip">{cat["icon"]} {esc(cat["title"])}</span>
+        <span class="chip">{esc(cat["title"])}</span>
         {warn_chip}
         {tags}
       </div>
@@ -234,12 +261,12 @@ def place_page(p):
       <aside class="info-card">
         <h2>Visitor info</h2>
         <div class="info-block">
-          <div class="label">{INFO["pin"]} Location</div>
+          <div class="label">Location</div>
           <p>{esc(p["location"])}</p>
-          <p style="margin-top:8px"><a class="btn btn-green" style="padding:9px 16px;font-size:.88rem" href="{esc(maps_url(p["maps_query"]))}" target="_blank" rel="noopener">📍 View on Google Maps</a></p>
+          <p style="margin-top:8px"><a class="btn btn-green" href="{esc(maps_url(p["maps_query"]))}" target="_blank" rel="noopener">View on Google Maps</a></p>
         </div>
         <div class="info-block">
-          <div class="label">{INFO["phone"]} Contact</div>
+          <div class="label">Contact</div>
           {contacts}
         </div>
         {extras}
@@ -273,9 +300,8 @@ def hotlines_page():
         for n in names:
             h = by_name[n]
             cards += f'''<div class="hl-card">
-  <div class="hl-icon">☎️</div>
-  <div><div class="hl-name">{esc(h[0])}</div><div class="hl-num">{esc(h[1])}</div></div>
-  <a class="call-btn" href="{esc(h[2])}" aria-label="Call {esc(h[1])}">{PHONE}</a>
+  <div class="hl-details"><div class="hl-name">{esc(h[0])}</div><div class="hl-num">{esc(h[1])}</div></div>
+  <a class="call-btn" href="{esc(h[2])}" aria-label="Call {esc(h[1])}">Call</a>
 </div>'''
         groups_html += f'<div class="hl-group"><h2>{esc(gtitle)}</h2><div class="hl-grid">{cards}</div></div>'
     body = f'''{header("", "hotlines")}
@@ -284,20 +310,20 @@ def hotlines_page():
     <div class="wrap">
       <div class="section-head">
         <div>
-          <span class="eyebrow">🚨 Stay safe</span>
+          <span class="eyebrow">Travel information</span>
           <h2>Claveria Emergency Hotlines</h2>
           <p>Keep these numbers saved on your phone while exploring Claveria, Misamis Oriental. Tap the green button to call directly.</p>
         </div>
       </div>
       <div class="emergency-banner">
         <div>
-          <h2>🚨 General Emergency</h2>
+          <h2>General emergency</h2>
           <p>For any life-threatening emergency anywhere in the Philippines, dial the national emergency hotline.</p>
         </div>
-        <a class="btn" href="tel:911">📞 Call 911</a>
+        <a class="btn" href="tel:911">Call 911</a>
       </div>
 {groups_html}
-      <div class="hl-note">ℹ️ Numbers compiled from the official <em>Claveria Emergency Hotlines</em> list (MDDRMO Claveria, Municipal Police Station, MisOr PDRRMO & hospital contacts). Save them before heading to the highlands — signal can be spotty in mountain barangays.</div>
+      <div class="hl-note">Numbers compiled from the official <em>Claveria Emergency Hotlines</em> list (MDDRMO Claveria, Municipal Police Station, MisOr PDRRMO & hospital contacts). Save them before heading to the highlands — signal can be spotty in mountain barangays.</div>
     </div>
   </section>
 </main>
@@ -314,10 +340,10 @@ def index_page():
         imgs = place_images(sample)
         img = imgs[0] if imgs else "assets/img/brand/hero.jpg"
         cats_html += f'''<a class="cat-card reveal" href="{key}.html">
-  <div class="cat-img"><img src="{img}" alt="{esc(cat['title'])}" loading="lazy"></div>
+  <div class="cat-img"><img src="{img}" alt="{esc(cat['title'])}" loading="lazy" decoding="async"></div>
   <span class="count">{n} places</span>
   <div class="cat-body">
-    <div class="cat-icon">{cat['icon']}</div>
+    <div class="cat-kicker">{key.upper()}</div>
     <h3>{esc(cat['title'])}</h3>
     <p>{esc(cat['blurb'])}</p>
   </div>
@@ -328,14 +354,14 @@ def index_page():
     body = f'''{header("", "")}
 <main>
   <section class="hero">
-    <div class="hero-bg"><img src="assets/img/brand/hero.jpg" alt="Municipality of Claveria, Misamis Oriental"></div>
+    <div class="hero-bg"><img src="assets/img/brand/hero.jpg" alt="Municipality of Claveria, Misamis Oriental" fetchpriority="high" decoding="async"></div>
     <div class="hero-content">
       <h1>Escape to <em>Claveria</em></h1>
       <p class="sub">Cool mountain air, hidden waterfalls, cozy cabins and the best café stops along Route 955 — your complete guide to Claveria, Misamis Oriental.</p>
       <div class="hero-cta">
-        <a class="btn btn-lime" href="staycation.html">🏕️ Explore Staycations</a>
-        <a class="btn btn-ghost" href="falls.html">💧 Find Waterfalls</a>
-        <a class="btn btn-ghost" href="cafes.html">☕ Café & Resto Stops</a>
+        <a class="btn btn-lime" href="staycation.html">Explore Staycations</a>
+        <a class="btn btn-ghost" href="falls.html">Find Waterfalls</a>
+        <a class="btn btn-ghost" href="cafes.html">Café & Resto Stops</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><b>{counts['staycation']}</b><span>Staycations</span></div>
@@ -369,7 +395,7 @@ def index_page():
           <h2>Featured spots</h2>
           <p>A few favorites from the community — from bonfire camps to glass-house cafés.</p>
         </div>
-        <a class="btn btn-green" href="staycation.html">View all →</a>
+        <a class="btn btn-green" href="staycation.html">View all</a>
       </div>
       <div class="card-grid">
 {feat_cards}
@@ -386,10 +412,10 @@ def index_page():
         </div>
       </div>
       <div class="why-grid">
-        <div class="why-card reveal"><div class="why-icon">🛣️</div><h3>Route 955 corridor</h3><p>Most attractions line the scenic Gingoog–Claveria Road — easy to hop from falls to café to cabin in one day.</p></div>
-        <div class="why-card reveal"><div class="why-icon">🌫️</div><h3>Cool mountain weather</h3><p>Claveria's highlands stay misty and cold — perfect for bonfires, hot sikwate and cozy overnight stays.</p></div>
-        <div class="why-card reveal"><div class="why-icon">💧</div><h3>Falls & springs</h3><p>From free-entry Mailig and Bindol Falls to cottage-side Nasaad — bring a towel and a picnic.</p></div>
-        <div class="why-card reveal"><div class="why-icon">📞</div><h3>Travel safe</h3><p>Save the <a href="hotlines.html">emergency hotlines</a> — MDDRMO, police and hospital contacts for Claveria.</p></div>
+        <div class="why-card reveal"><span class="why-index">01</span><h3>Route 955 corridor</h3><p>Most attractions line the scenic Gingoog–Claveria Road — easy to hop from falls to café to cabin in one day.</p></div>
+        <div class="why-card reveal"><span class="why-index">02</span><h3>Cool mountain weather</h3><p>Claveria's highlands stay misty and cold — perfect for bonfires, hot sikwate and cozy overnight stays.</p></div>
+        <div class="why-card reveal"><span class="why-index">03</span><h3>Falls & springs</h3><p>From free-entry Mailig and Bindol Falls to cottage-side Nasaad — bring a towel and a picnic.</p></div>
+        <div class="why-card reveal"><span class="why-index">04</span><h3>Travel safe</h3><p>Save the <a href="hotlines.html">emergency hotlines</a> — MDDRMO, police and hospital contacts for Claveria.</p></div>
       </div>
     </div>
   </section>
@@ -398,10 +424,10 @@ def index_page():
     <div class="wrap">
       <div class="emergency-banner" style="margin-bottom:0">
         <div>
-          <h2>🚨 Heading to the mountains?</h2>
+          <h2>Heading to the mountains?</h2>
           <p>Save Claveria's emergency hotlines before you go — signal gets spotty up in the barangays.</p>
         </div>
-        <a class="btn" href="hotlines.html">View hotlines 📞</a>
+        <a class="btn" href="hotlines.html">View emergency hotlines</a>
       </div>
     </div>
   </section>
@@ -423,7 +449,7 @@ def sitemap():
     pages += [f"place/{p['slug']}.html" for p in PLACES]
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in pages:
-        xml.append(f"  <url><loc>https://claveria-website.vercel.app/{p}</loc><changefreq>weekly</changefreq></url>")
+        xml.append(f"  <url><loc>https://claveria-website-ovus.vercel.app/{p}</loc><changefreq>weekly</changefreq></url>")
     xml.append("</urlset>")
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write("\n".join(xml))
@@ -435,7 +461,7 @@ def data_json():
     for p in PLACES:
         out.append({**p, "images": place_images(p)})
     with open(os.path.join(ROOT, "data", "places.json"), "w", encoding="utf-8") as f:
-        json.dump({"site": SITE, "categories": CATEGORIES, "places": out, "hotlines": HOTLINES}, f, ensure_ascii=False, indent=2)
+        json.dump(clean_data({"site": SITE, "categories": CATEGORIES, "places": out, "hotlines": HOTLINES}), f, ensure_ascii=False, indent=2)
     print("wrote data/places.json")
 
 
