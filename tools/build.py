@@ -294,7 +294,10 @@ def place_page(p):
     contacts = ""
     for label, value, href in p["contact"]:
         action = "Call" if href.startswith("tel:") else "Email" if href.startswith("mailto:") else "Message" if "wa.me" in href else "Open"
-        contacts += f'<a class="contact-link" href="{esc(href)}"><span><small>{esc(label)}</small><br>{esc(value)}</span><span class="contact-action">{action}</span></a>'
+        display_value = esc(value)
+        if href.startswith("mailto:"):
+            display_value = display_value.replace("@", "<wbr>@<wbr>", 1)
+        contacts += f'<a class="contact-link" href="{esc(href)}"><span><small>{esc(label)}</small><br>{display_value}</span><span class="contact-action">{action}</span></a>'
     if not contacts:
         contacts = '<p style="color:var(--muted);font-size:.92rem">No direct contact listed — ask locals or check their Facebook page.</p>'
 
@@ -410,7 +413,7 @@ def place_page(p):
 <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
   <button class="lb-close" aria-label="Close">×</button>
   <button class="lb-nav lb-prev" aria-label="Previous">‹</button>
-  <img src="" alt="Place photo">
+  <img alt="Place photo">
   <button class="lb-nav lb-next" aria-label="Next">›</button>
   <div class="lb-count"></div>
 </div>
