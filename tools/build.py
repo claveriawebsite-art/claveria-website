@@ -423,7 +423,7 @@ def sitemap():
     pages += [f"place/{p['slug']}.html" for p in PLACES]
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in pages:
-        xml.append(f"  <url><loc>https://claveria-escape.vercel.app/{p}</loc><changefreq>weekly</changefreq></url>")
+        xml.append(f"  <url><loc>https://claveria-website.vercel.app/{p}</loc><changefreq>weekly</changefreq></url>")
     xml.append("</urlset>")
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write("\n".join(xml))

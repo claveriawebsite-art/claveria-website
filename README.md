@@ -44,10 +44,11 @@ python3 tools/build.py           # generate all HTML pages + sitemap + data/plac
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/claveriawebsite-art/claveria-website)
 
-Or from the [Vercel dashboard](https://vercel.com/claveria1):
-1. **Add New → Project → Import Git Repository** → pick `claveriawebsite-art/claveria-website`
-   (if it's not listed, click *Adjust GitHub App Access* and grant the Vercel app access to that repo)
-2. Framework Preset: **Other** · Root Directory: `./` · no build command · Output: static (auto-detected)
-3. Click **Deploy**. Every push to `main` then auto-deploys to production.
+The site is live at **https://claveria-website.vercel.app**. The production project is `claveria-website` in the [claveria1 Vercel workspace](https://vercel.com/claveria1). The initial deployment was created from the pushed GitHub commit.
+
+To enable **automatic deployments on each push** (the existing Vercel project is not yet connected to GitHub):
+1. Open [Project Settings → Git](https://vercel.com/claveria1/claveria-website/settings/git).
+2. Choose **Connect Git Repository** and select `claveriawebsite-art/claveria-website`.
+3. If prompted, install/authorize the Vercel GitHub App for the repository. Keep `main` as the production branch.
 
 Static site, zero build config — `vercel.json` only adds clean URLs + cache headers.
