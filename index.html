@@ -27,9 +27,16 @@
     <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation"><a href="index.html" class="active ">Home</a><a href="staycation.html" class=" ">Staycations</a><a href="falls.html" class=" ">Falls</a><a href="cafes.html" class=" ">Cafés & Restos</a><a href="hotlines.html" class=" hot">Hotlines</a></nav>
   </div>
 </header>
-<main>
+<main class="home-screen">
+  <section class="mobile-greeting">
+    <div class="wrap">
+      <p class="greeting-kicker" data-greeting>Good morning,</p>
+      <h2>Explorer</h2>
+      <p class="greeting-prompt">Claveria is calling. Where will you go today?</p>
+    </div>
+  </section>
   <section class="hero">
-    <div class="hero-bg"><img src="assets/img/brand/hero.jpg" alt="Municipality of Claveria, Misamis Oriental" fetchpriority="high" decoding="async"></div>
+    <div class="hero-bg"><picture><source media="(max-width: 720px)" srcset="assets/img/staycation/hiraya-farm-escape/1.jpg"><img src="assets/img/brand/hero.jpg" alt="Claveria highlands and visitor destinations" fetchpriority="high" decoding="async"></picture></div>
     <div class="hero-content">
       <h1>Escape to <em>Claveria</em></h1>
       <p class="sub">Cool mountain air, hidden waterfalls, cozy cabins and the best café stops along Route 955 — your complete guide to Claveria, Misamis Oriental.</p>
@@ -57,29 +64,29 @@
         </div>
       </div>
       <div class="cat-grid">
-<a class="cat-card reveal" href="staycation.html">
-  <div class="cat-img"><img src="assets/img/staycation/baqs-bonfires/1.jpg" alt="Staycations &amp; Resorts" loading="lazy" decoding="async"></div>
-  <span class="count">14 places</span>
+<a class="cat-card cat-card-cafes reveal" href="cafes.html">
+  <div class="cat-img"><img src="assets/img/cafes/skye-88-cafe/1.jpg" alt="Coffee Shops &amp; Restaurants" loading="lazy" decoding="async"></div>
+  <span class="count">12 places</span>
   <div class="cat-body">
-    <div class="cat-kicker">STAYCATION</div>
-    <h3>Staycations &amp; Resorts</h3>
-    <p>Cabins, campsites, farm resorts and vacation houses in the Claveria highlands.</p>
+    <div class="cat-kicker">CAFES</div>
+    <h3>Coffee Shops</h3>
+    <p>Café stops and resto-bars perfect for breaks along Route 955.</p>
   </div>
-</a><a class="cat-card reveal" href="falls.html">
-  <div class="cat-img"><img src="assets/img/falls/mailig-falls/1.jpg" alt="Waterfalls" loading="lazy" decoding="async"></div>
+</a><a class="cat-card cat-card-falls reveal" href="falls.html">
+  <div class="cat-img"><img src="assets/img/falls/lantawon-falls/1.jpg" alt="Waterfalls" loading="lazy" decoding="async"></div>
   <span class="count">6 places</span>
   <div class="cat-body">
     <div class="cat-kicker">FALLS</div>
     <h3>Waterfalls</h3>
     <p>Cool, refreshing falls scattered across Claveria&#x27;s barangays.</p>
   </div>
-</a><a class="cat-card reveal" href="cafes.html">
-  <div class="cat-img"><img src="assets/img/cafes/jacos-stopover/1.jpg" alt="Coffee Shops &amp; Restaurants" loading="lazy" decoding="async"></div>
-  <span class="count">12 places</span>
+</a><a class="cat-card cat-card-staycation reveal" href="staycation.html">
+  <div class="cat-img"><img src="assets/img/staycation/hiraya-farm-escape/1.jpg" alt="Staycations &amp; Resorts" loading="lazy" decoding="async"></div>
+  <span class="count">14 places</span>
   <div class="cat-body">
-    <div class="cat-kicker">CAFES</div>
-    <h3>Coffee Shops &amp; Restaurants</h3>
-    <p>Café stops and resto-bars perfect for breaks along Route 955.</p>
+    <div class="cat-kicker">STAYCATION</div>
+    <h3>Stays</h3>
+    <p>Cabins, campsites, farm resorts and vacation houses in the Claveria highlands.</p>
   </div>
 </a>
       </div>
@@ -97,54 +104,72 @@
         <a class="btn btn-green" href="staycation.html">View all</a>
       </div>
       <div class="card-grid">
-<a class="place-card reveal" href="place/baqs-bonfires.html">
-  <div class="thumb"><img src="assets/img/staycation/baqs-bonfires/1.jpg" alt="Baqs&amp;Bonfires" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Baqs&amp;Bonfires</h3>
-    <span class="tagline">Exclusive mountain campground with bonfire nights</span>
-    <span class="loc">Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/hiraya-farm-escape.html">
-  <div class="thumb"><img src="assets/img/staycation/hiraya-farm-escape/1.jpg" alt="Hiraya Farm Escape" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Hiraya Farm Escape</h3>
-    <span class="tagline">Highland leisure farm with ATV, go-karts &amp; rainbow slides</span>
-    <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/cabinscape-ridge-resort.html">
-  <div class="thumb"><img src="assets/img/staycation/cabinscape-ridge-resort/1.jpg" alt="Cabinscape Ridge Resort" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Cabinscape Ridge Resort</h3>
-    <span class="tagline">Nordic-inspired glamping in the misty highlands</span>
-    <span class="loc">Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/lantawon-falls.html">
-  <div class="thumb"><img src="assets/img/falls/lantawon-falls/1.jpg" alt="Lantawon Falls" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
-  <div class="body">
-    <h3>Lantawon Falls</h3>
-    <span class="tagline">The falls inside ApoVista Forest Park</span>
-    <span class="loc">ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/lone-wolf-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/lone-wolf-cafe/1.jpg" alt="Lone Wolf Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Lone Wolf Cafe</h3>
-    <span class="tagline">Claveria&#x27;s first 24/7 introvert-themed coffee shop</span>
-    <span class="loc">Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955)</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/skye-88-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/skye-88-cafe/1.jpg" alt="Skye 88 Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Skye 88 Cafe</h3>
-    <span class="tagline">Glass-house café inside Hiraya Farm Escape</span>
-    <span class="loc">Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
+<article class="place-card reveal" data-place-card data-place-slug="baqs-bonfires" data-tags="campground | bonfire | exclusive | group" data-search="Baqs&amp;Bonfires Exclusive mountain campground with bonfire nights Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental campground bonfire exclusive group">
+  <a class="place-card-link" href="place/baqs-bonfires.html">
+    <div class="thumb"><img src="assets/img/staycation/baqs-bonfires/1.jpg" alt="Baqs&amp;Bonfires" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Baqs&amp;Bonfires</h3>
+      <span class="tagline">Exclusive mountain campground with bonfire nights</span>
+      <span class="loc">Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="baqs-bonfires" data-place-name="Baqs&amp;Bonfires" aria-label="Save Baqs&amp;Bonfires" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="hiraya-farm-escape" data-tags="farm | atv | family | activities" data-search="Hiraya Farm Escape Highland leisure farm with ATV, go-karts &amp; rainbow slides Barangay Lanise, Claveria, Misamis Oriental farm ATV family activities">
+  <a class="place-card-link" href="place/hiraya-farm-escape.html">
+    <div class="thumb"><img src="assets/img/staycation/hiraya-farm-escape/1.jpg" alt="Hiraya Farm Escape" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Hiraya Farm Escape</h3>
+      <span class="tagline">Highland leisure farm with ATV, go-karts &amp; rainbow slides</span>
+      <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="hiraya-farm-escape" data-place-name="Hiraya Farm Escape" aria-label="Save Hiraya Farm Escape" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="cabinscape-ridge-resort" data-tags="glamping | cabin | aesthetic | pool" data-search="Cabinscape Ridge Resort Nordic-inspired glamping in the misty highlands Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental glamping cabin aesthetic pool">
+  <a class="place-card-link" href="place/cabinscape-ridge-resort.html">
+    <div class="thumb"><img src="assets/img/staycation/cabinscape-ridge-resort/1.jpg" alt="Cabinscape Ridge Resort" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Cabinscape Ridge Resort</h3>
+      <span class="tagline">Nordic-inspired glamping in the misty highlands</span>
+      <span class="loc">Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="cabinscape-ridge-resort" data-place-name="Cabinscape Ridge Resort" aria-label="Save Cabinscape Ridge Resort" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="lantawon-falls" data-tags="waterfall | forest park" data-search="Lantawon Falls The falls inside ApoVista Forest Park ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental waterfall forest park">
+  <a class="place-card-link" href="place/lantawon-falls.html">
+    <div class="thumb"><img src="assets/img/falls/lantawon-falls/1.jpg" alt="Lantawon Falls" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
+    <div class="body">
+      <h3>Lantawon Falls</h3>
+      <span class="tagline">The falls inside ApoVista Forest Park</span>
+      <span class="loc">ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="lantawon-falls" data-place-name="Lantawon Falls" aria-label="Save Lantawon Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="lone-wolf-cafe" data-tags="cafe | 24/7 | coffee" data-search="Lone Wolf Cafe Claveria&#x27;s first 24/7 introvert-themed coffee shop Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955) cafe 24/7 coffee">
+  <a class="place-card-link" href="place/lone-wolf-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/lone-wolf-cafe/1.jpg" alt="Lone Wolf Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Lone Wolf Cafe</h3>
+      <span class="tagline">Claveria&#x27;s first 24/7 introvert-themed coffee shop</span>
+      <span class="loc">Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955)</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="lone-wolf-cafe" data-place-name="Lone Wolf Cafe" aria-label="Save Lone Wolf Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="skye-88-cafe" data-tags="cafe | glass house | view | inside hiraya" data-search="Skye 88 Cafe Glass-house café inside Hiraya Farm Escape Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental cafe glass house view inside hiraya">
+  <a class="place-card-link" href="place/skye-88-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/skye-88-cafe/1.jpg" alt="Skye 88 Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Skye 88 Cafe</h3>
+      <span class="tagline">Glass-house café inside Hiraya Farm Escape</span>
+      <span class="loc">Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="skye-88-cafe" data-place-name="Skye 88 Cafe" aria-label="Save Skye 88 Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
       </div>
     </div>
   </section>
@@ -191,6 +216,8 @@
       <div>
         <h4>Explore</h4>
         <ul>
+          <li><a href="map.html">Area map</a></li>
+          <li><a href="saved.html">Saved places</a></li>
           <li><a href="staycation.html">Staycations & Resorts</a></li>
           <li><a href="falls.html">Waterfalls</a></li>
           <li><a href="cafes.html">Coffee Shops & Restaurants</a></li>
@@ -213,6 +240,7 @@
     </div>
   </div>
 </footer>
+<nav class="mobile-tabbar" aria-label="Quick navigation"><a class="mobile-tab active" href="index.html" aria-current=page><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/></svg><span>Home</span></a><a class="mobile-tab " href="map.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg><span>Map</span></a><a class="mobile-tab " href="saved.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span>Saved</span><b class=tab-count data-saved-count></b></a><a class="mobile-tab " href="hotlines.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Hotlines</span></a></nav>
 <button class="back-top" aria-label="Back to top">Top</button><script src="assets/js/main.js" defer></script>
 </body>
 </html>

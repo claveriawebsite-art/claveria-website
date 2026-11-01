@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#024023">
+<title>Claveria Map · Claveria Escape</title>
+<meta name="description" content="Interactive map and directory of Claveria, Misamis Oriental places, cafés, waterfalls, and stays.">
+<meta property="og:title" content="Claveria Map · Claveria Escape">
+<meta property="og:description" content="Interactive map and directory of Claveria, Misamis Oriental places, cafés, waterfalls, and stays.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/brand/og.jpg">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+</head>
+<body><header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/brand/logo.png" alt="Claveria Escape logo" width="46" height="46">
+      <span class="brand-text">Claveria Escape<small>Misamis Oriental</small></span>
+    </a>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation"><a href="index.html" class="active ">Home</a><a href="staycation.html" class=" ">Staycations</a><a href="falls.html" class=" ">Falls</a><a href="cafes.html" class=" ">Cafés & Restos</a><a href="hotlines.html" class=" hot">Hotlines</a></nav>
+  </div>
+</header>
+<main class="app-screen map-screen">
+  <section class="section map-section">
+    <div class="wrap">
+      <div class="section-head map-heading">
+        <div>
+          <span class="eyebrow">Get around</span>
+          <h2>Claveria map</h2>
+          <p>Browse the places in this guide, then open a listing for its location details.</p>
+        </div>
+        <span class="chip place-count">32 mapped places</span>
+      </div>
+      <div class="map-explorer">
+        <div id="claveria-map" class="leaflet-map" aria-label="Map of places in Claveria" hidden></div>
+        <div class="map-fallback">
+          <iframe title="Overview map of Claveria places" src="https://www.openstreetmap.org/export/embed.html?bbox=124.824288,8.590458,125.038895,8.721749&amp;layer=mapnik&amp;marker=8.6561036,124.9315915" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <p class="map-note">Map data © OpenStreetMap contributors. Four location pins are approximate; their place pages include a note. For turn-by-turn directions, use the Directions link.</p>
+      <div class="map-directory-head">
+        <div>
+          <h3>Find a place</h3>
+          <p>32 listings in the Claveria guide</p>
+        </div>
+      </div>
+      <div class="search-bar map-search-bar">
+        <label class="sr-only" for="map-search">Search mapped places</label>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="map-search" type="search" placeholder="Search by place or area" autocomplete="off">
+      </div>
+      <div class="filter-row map-filter-row" role="group" aria-label="Filter map locations"><button class="filter-chip active" type="button" data-map-filter="all" aria-pressed="true">All</button><button class="filter-chip" type="button" data-map-filter="cafes" aria-pressed="false">Coffee shops</button><button class="filter-chip" type="button" data-map-filter="falls" aria-pressed="false">Waterfalls</button><button class="filter-chip" type="button" data-map-filter="staycation" aria-pressed="false">Staycations</button></div>
+      <div class="map-place-list" id="map-place-list">
+<article class="map-place-card" data-map-item data-map-category="staycation" data-search="Baqs&amp;Bonfires Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/baqs-bonfires.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Baqs&amp;Bonfires</h3>
+    <span class="map-place-location">Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Baqs%20Bonfires%20Sitio%20Sumpong%20Madaguing%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Victoria&#x27;s Haven San Roque, Doalnara, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/victorias-haven.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Victoria&#x27;s Haven</h3>
+    <span class="map-place-location">San Roque, Doalnara, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Victoria%27s%20Haven%20San%20Roque%20Doalnara%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Claveria Wooden Cabins Barangay Aposkahoy, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/claveria-wooden-cabins.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Claveria Wooden Cabins</h3>
+    <span class="map-place-location">Barangay Aposkahoy, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Claveria%20Wooden%20Cabins%20Aposkahoy%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Romualda&#x27;s Vacation House Barangay Mat-i, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/romualdas-vacation-house.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Romualda&#x27;s Vacation House</h3>
+    <span class="map-place-location">Barangay Mat-i, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Romualda%27s%20Vacation%20House%20Mat-i%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Hiraya Farm Escape Barangay Lanise, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/hiraya-farm-escape.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Hiraya Farm Escape</h3>
+    <span class="map-place-location">Barangay Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Hiraya%20Farm%20Escape%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="ApoVista Forest Park and Campsite Sitio Lantawan, Aposkahoy, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/apovista-forest-park.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>ApoVista Forest Park and Campsite</h3>
+    <span class="map-place-location">Sitio Lantawan, Aposkahoy, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=ApoVista%20Forest%20Park%20and%20Campsite%20Aposkahoy%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Camp Zion Claveria Barangay Panampawan, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/camp-zion.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Camp Zion Claveria</h3>
+    <span class="map-place-location">Barangay Panampawan, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Camp%20Zion%20Claveria%20Panampawan%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Payag ni Kuya Barangay Patrocinio, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/payag-ni-kuya.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Payag ni Kuya</h3>
+    <span class="map-place-location">Barangay Patrocinio, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Payag%20ni%20Kuya%20Patrocinio%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="JILA&#x27;s Smallville Sitio Macupa, Zone 6, Barangay Lanise, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/jilas-smallville.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>JILA&#x27;s Smallville</h3>
+    <span class="map-place-location">Sitio Macupa, Zone 6, Barangay Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=JILA%27s%20Smallville%20Sitio%20Macupa%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="PBrother&#x27;s Mountain View Resort Zone 4, Lower Lanise, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/p-brother-mountain.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>PBrother&#x27;s Mountain View Resort</h3>
+    <span class="map-place-location">Zone 4, Lower Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=PBrother%20Mountain%20View%20Resort%20Lower%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Janopolan Nature&#x27;s Spring Sitio Janopolan, Barangay Poblacion, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/janopolan-spring-resort.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Janopolan Nature&#x27;s Spring</h3>
+    <span class="map-place-location">Sitio Janopolan, Barangay Poblacion, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Janopolan%20Nature%27s%20Spring%20Resort%20Poblacion%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Chenenger Mountain Resort Barangay Lanise, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/cheenger-mountain-resort.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Chenenger Mountain Resort</h3>
+    <span class="map-place-location">Barangay Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Chenenger%20Mountain%20Resort%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Cabinscape Ridge Resort Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/cabinscape-ridge-resort.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Cabinscape Ridge Resort</h3>
+    <span class="map-place-location">Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Cabinscape%20Ridge%20Resort%20Mat-i%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="staycation" data-search="Aikeeko Farmview Resort Purok 4, Brgy. Lanise, Claveria, Misamis Oriental Staycations &amp; Resorts">
+  <a class="map-place-link" href="place/aikeeko-farmview-resort.html">
+    <span class="map-place-category">Staycations &amp; Resorts</span>
+    <h3>Aikeeko Farmview Resort</h3>
+    <span class="map-place-location">Purok 4, Brgy. Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Aikeeko%20Farmview%20Resort%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="falls" data-search="Mailig Falls Malagana, Claveria, Misamis Oriental Waterfalls">
+  <a class="map-place-link" href="place/mailig-falls.html">
+    <span class="map-place-category">Waterfalls</span>
+    <h3>Mailig Falls</h3>
+    <span class="map-place-location">Malagana, Claveria, Misamis Oriental</span>
+<span class="map-approximate">Approximate pin</span>
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Mailig%20Falls%20Malagana%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="falls" data-search="Lantawon Falls ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental Waterfalls">
+  <a class="map-place-link" href="place/lantawon-falls.html">
+    <span class="map-place-category">Waterfalls</span>
+    <h3>Lantawon Falls</h3>
+    <span class="map-place-location">ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental</span>
+<span class="map-approximate">Approximate pin</span>
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lantawon%20Falls%20ApoVista%20Forest%20Park%20Aposkahoy%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="falls" data-search="Twin Falls Mat-i, Claveria, Misamis Oriental Waterfalls">
+  <a class="map-place-link" href="place/twin-falls.html">
+    <span class="map-place-category">Waterfalls</span>
+    <h3>Twin Falls</h3>
+    <span class="map-place-location">Mat-i, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Twin%20Falls%20Mat-i%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="falls" data-search="Bindol Falls Lanise, Claveria, Misamis Oriental Waterfalls">
+  <a class="map-place-link" href="place/bindol-falls.html">
+    <span class="map-place-category">Waterfalls</span>
+    <h3>Bindol Falls</h3>
+    <span class="map-place-location">Lanise, Claveria, Misamis Oriental</span>
+<span class="map-approximate">Approximate pin</span>
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Bindol%20Falls%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="falls" data-search="Nasaad Falls Aposkahoy, Claveria, Misamis Oriental Waterfalls">
+  <a class="map-place-link" href="place/nasaad-falls.html">
+    <span class="map-place-category">Waterfalls</span>
+    <h3>Nasaad Falls</h3>
+    <span class="map-place-location">Aposkahoy, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Nasaad%20Falls%20Aposkahoy%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="falls" data-search="Kibolag Falls Villa Cascadia, Route 955, Claveria, Misamis Oriental Waterfalls">
+  <a class="map-place-link" href="place/kilobag-falls.html">
+    <span class="map-place-category">Waterfalls</span>
+    <h3>Kibolag Falls</h3>
+    <span class="map-place-location">Villa Cascadia, Route 955, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Kibolag%20Falls%20Villa%20Cascadia%20Route%20955%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="JaCo&#x27;s Stopover Zone 1, Barangay Luna, Route 955, Claveria Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/jacos-stopover.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>JaCo&#x27;s Stopover</h3>
+    <span class="map-place-location">Zone 1, Barangay Luna, Route 955, Claveria</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=JaCo%27s%20Stopover%20Barangay%20Luna%20Route%20955%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="The Promise Cafe Claveria Road, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/the-promise-cafe.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>The Promise Cafe</h3>
+    <span class="map-place-location">Claveria Road, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Promise%20Cafe%20Claveria%20Road%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Kasadya Cafe Barangay Tamboboan, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/kasadya-cafe.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Kasadya Cafe</h3>
+    <span class="map-place-location">Barangay Tamboboan, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Kasadya%20Cafe%20Tamboboan%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="The Sibs Coffee Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/the-sibs-coffee.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>The Sibs Coffee</h3>
+    <span class="map-place-location">Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Sibs%20Coffee%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="The Haze Kaffe Route 955, Sitio Civoleg, Brgy. Lunotan (Gingoog–Claveria mountain border), Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/the-haze-kaffe.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>The Haze Kaffe</h3>
+    <span class="map-place-location">Route 955, Sitio Civoleg, Brgy. Lunotan (Gingoog–Claveria mountain border), Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Haze%20Kaffe%20Route%20955%20Gingoog%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Hamugaway ni Dodongstan Café and Restaurant Route 955, Barangay Ane-i, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/hamugaway-ni-dodongstan.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Hamugaway ni Dodongstan Café and Restaurant</h3>
+    <span class="map-place-location">Route 955, Barangay Ane-i, Claveria, Misamis Oriental</span>
+<span class="map-approximate">Approximate pin</span>
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Hamugaway%20ni%20Dodongstan%20Cafe%20Ane-i%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Sanctum by CNC Cafe Magantol Village, Zone 6, Artadi Street, Poblacion, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/sanctum-by-cnc.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Sanctum by CNC Cafe</h3>
+    <span class="map-place-location">Magantol Village, Zone 6, Artadi Street, Poblacion, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Sanctum%20by%20CNC%20Cafe%20Magantol%20Village%20Poblacion%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Chelsea&#x27;s Cafe and Restaurant Barangay Lanise, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/chelseas-cafe-restaurant.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Chelsea&#x27;s Cafe and Restaurant</h3>
+    <span class="map-place-location">Barangay Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Chelsea%27s%20Cafe%20and%20Restaurant%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Julio&#x27;s Cafe and Restaurant Route 955 (Big C Route), Barangay Mat-i, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/julios-cafe-restaurant.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Julio&#x27;s Cafe and Restaurant</h3>
+    <span class="map-place-location">Route 955 (Big C Route), Barangay Mat-i, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Julio%27s%20Cafe%20and%20Restaurant%20Mat-i%20Route%20955%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Lone Wolf Cafe Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955) Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/lone-wolf-cafe.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Lone Wolf Cafe</h3>
+    <span class="map-place-location">Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955)</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lone%20Wolf%20Cafe%20Brgy%20Luna%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Don Narciso Cafe Zone 6, Brgy. Lanise, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/don-narciso-cafe.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Don Narciso Cafe</h3>
+    <span class="map-place-location">Zone 6, Brgy. Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Don%20Narciso%20Cafe%20Zone%206%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article><article class="map-place-card" data-map-item data-map-category="cafes" data-search="Skye 88 Cafe Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental Coffee Shops &amp; Restaurants">
+  <a class="map-place-link" href="place/skye-88-cafe.html">
+    <span class="map-place-category">Coffee Shops &amp; Restaurants</span>
+    <h3>Skye 88 Cafe</h3>
+    <span class="map-place-location">Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental</span>
+
+  </a>
+  <a class="map-direction-link" href="https://www.google.com/maps/search/?api=1&amp;query=Skye%2088%20Cafe%20Hiraya%20Farm%20Escape%20Lanise%20Claveria%20Misamis%20Oriental" target="_blank" rel="noopener">Directions</a>
+</article>
+      </div>
+      <div class="no-results" id="map-no-results">No mapped places match your search.</div>
+    </div>
+  </section>
+</main>
+<script id="map-places-data" type="application/json">[{"slug":"baqs-bonfires","name":"Baqs&Bonfires","category":"staycation","category_title":"Staycations & Resorts","location":"Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental","lat":8.6654772,"lon":124.8909191,"approximate":false},{"slug":"victorias-haven","name":"Victoria's Haven","category":"staycation","category_title":"Staycations & Resorts","location":"San Roque, Doalnara, Claveria, Misamis Oriental","lat":8.6951938,"lon":124.9934882,"approximate":false},{"slug":"claveria-wooden-cabins","name":"Claveria Wooden Cabins","category":"staycation","category_title":"Staycations & Resorts","location":"Barangay Aposkahoy, Claveria, Misamis Oriental","lat":8.696782599999999,"lon":124.9948414,"approximate":false},{"slug":"romualdas-vacation-house","name":"Romualda's Vacation House","category":"staycation","category_title":"Staycations & Resorts","location":"Barangay Mat-i, Claveria, Misamis Oriental","lat":8.6326039,"lon":124.9724873,"approximate":false},{"slug":"hiraya-farm-escape","name":"Hiraya Farm Escape","category":"staycation","category_title":"Staycations & Resorts","location":"Barangay Lanise, Claveria, Misamis Oriental","lat":8.6298125,"lon":124.9485625,"approximate":false},{"slug":"apovista-forest-park","name":"ApoVista Forest Park and Campsite","category":"staycation","category_title":"Staycations & Resorts","location":"Sitio Lantawan, Aposkahoy, Claveria, Misamis Oriental","lat":8.688577,"lon":124.992465,"approximate":false},{"slug":"camp-zion","name":"Camp Zion Claveria","category":"staycation","category_title":"Staycations & Resorts","location":"Barangay Panampawan, Claveria, Misamis Oriental","lat":8.6579823,"lon":124.905521,"approximate":false},{"slug":"payag-ni-kuya","name":"Payag ni Kuya","category":"staycation","category_title":"Staycations & Resorts","location":"Barangay Patrocinio, Claveria, Misamis Oriental","lat":8.6113067,"lon":124.8492882,"approximate":false},{"slug":"jilas-smallville","name":"JILA's Smallville","category":"staycation","category_title":"Staycations & Resorts","location":"Sitio Macupa, Zone 6, Barangay Lanise, Claveria, Misamis Oriental","lat":8.6319542,"lon":124.9595209,"approximate":false},{"slug":"p-brother-mountain","name":"PBrother's Mountain View Resort","category":"staycation","category_title":"Staycations & Resorts","location":"Zone 4, Lower Lanise, Claveria, Misamis Oriental","lat":8.6374379,"lon":124.9373311,"approximate":false},{"slug":"janopolan-spring-resort","name":"Janopolan Nature's Spring","category":"staycation","category_title":"Staycations & Resorts","location":"Sitio Janopolan, Barangay Poblacion, Claveria, Misamis Oriental","lat":8.635050399999999,"lon":124.9093957,"approximate":false},{"slug":"cheenger-mountain-resort","name":"Chenenger Mountain Resort","category":"staycation","category_title":"Staycations & Resorts","location":"Barangay Lanise, Claveria, Misamis Oriental","lat":8.636607399999999,"lon":124.9360825,"approximate":false},{"slug":"cabinscape-ridge-resort","name":"Cabinscape Ridge Resort","category":"staycation","category_title":"Staycations & Resorts","location":"Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental","lat":8.6326196,"lon":124.9733134,"approximate":false},{"slug":"aikeeko-farmview-resort","name":"Aikeeko Farmview Resort","category":"staycation","category_title":"Staycations & Resorts","location":"Purok 4, Brgy. Lanise, Claveria, Misamis Oriental","lat":8.634085599999999,"lon":124.938034,"approximate":false},{"slug":"mailig-falls","name":"Mailig Falls","category":"falls","category_title":"Waterfalls","location":"Malagana, Claveria, Misamis Oriental","lat":8.668816099999999,"lon":124.9341234,"approximate":true},{"slug":"lantawon-falls","name":"Lantawon Falls","category":"falls","category_title":"Waterfalls","location":"ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental","lat":8.688577,"lon":124.992465,"approximate":true},{"slug":"twin-falls","name":"Twin Falls","category":"falls","category_title":"Waterfalls","location":"Mat-i, Claveria, Misamis Oriental","lat":8.6401563,"lon":124.9729539,"approximate":false},{"slug":"bindol-falls","name":"Bindol Falls","category":"falls","category_title":"Waterfalls","location":"Lanise, Claveria, Misamis Oriental","lat":8.611746199999999,"lon":124.9451498,"approximate":true},{"slug":"nasaad-falls","name":"Nasaad Falls","category":"falls","category_title":"Waterfalls","location":"Aposkahoy, Claveria, Misamis Oriental","lat":8.678781899999999,"lon":124.9727096,"approximate":false},{"slug":"kilobag-falls","name":"Kibolag Falls","category":"falls","category_title":"Waterfalls","location":"Villa Cascadia, Route 955, Claveria, Misamis Oriental","lat":8.657602599999999,"lon":124.9944263,"approximate":false},{"slug":"jacos-stopover","name":"JaCo's Stopover","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Zone 1, Barangay Luna, Route 955, Claveria","lat":8.6475428,"lon":124.9207222,"approximate":false},{"slug":"the-promise-cafe","name":"The Promise Cafe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Claveria Road, Claveria, Misamis Oriental","lat":8.667045,"lon":124.9872249,"approximate":false},{"slug":"kasadya-cafe","name":"Kasadya Cafe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Barangay Tamboboan, Claveria, Misamis Oriental","lat":8.645670599999999,"lon":124.9138159,"approximate":false},{"slug":"the-sibs-coffee","name":"The Sibs Coffee","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Claveria, Misamis Oriental","lat":8.611575799999999,"lon":124.8885608,"approximate":false},{"slug":"the-haze-kaffe","name":"The Haze Kaffe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Route 955, Sitio Civoleg, Brgy. Lunotan (Gingoog–Claveria mountain border), Misamis Oriental","lat":8.7037493,"lon":125.0138948,"approximate":false},{"slug":"hamugaway-ni-dodongstan","name":"Hamugaway ni Dodongstan Café and Restaurant","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Route 955, Barangay Ane-i, Claveria, Misamis Oriental","lat":8.6536875,"lon":124.9919375,"approximate":true},{"slug":"sanctum-by-cnc","name":"Sanctum by CNC Cafe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Magantol Village, Zone 6, Artadi Street, Poblacion, Claveria, Misamis Oriental","lat":8.608457999999999,"lon":124.8924179,"approximate":false},{"slug":"chelseas-cafe-restaurant","name":"Chelsea's Cafe and Restaurant","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Barangay Lanise, Claveria, Misamis Oriental","lat":8.6302456,"lon":124.9491346,"approximate":false},{"slug":"julios-cafe-restaurant","name":"Julio's Cafe and Restaurant","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Route 955 (Big C Route), Barangay Mat-i, Claveria, Misamis Oriental","lat":8.6565466,"lon":124.9937145,"approximate":false},{"slug":"lone-wolf-cafe","name":"Lone Wolf Cafe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955)","lat":8.63902,"lon":124.930302,"approximate":false},{"slug":"don-narciso-cafe","name":"Don Narciso Cafe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Zone 6, Brgy. Lanise, Claveria, Misamis Oriental","lat":8.6334429,"lon":124.9661362,"approximate":false},{"slug":"skye-88-cafe","name":"Skye 88 Cafe","category":"cafes","category_title":"Coffee Shops & Restaurants","location":"Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental","lat":8.6299627,"lon":124.948748,"approximate":false}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/img/brand/logo.png" alt="Claveria Escape logo" width="54" height="54">
+          <span class="brand-text" style="color:#fff">Claveria Escape<small>Misamis Oriental</small></span>
+        </a>
+        <p style="margin-top:14px;max-width:340px;font-size:.93rem">Your community guide to the highlands of Claveria — staycations, waterfalls, cafés & restaurants along scenic Route 955.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="map.html">Area map</a></li>
+          <li><a href="saved.html">Saved places</a></li>
+          <li><a href="staycation.html">Staycations & Resorts</a></li>
+          <li><a href="falls.html">Waterfalls</a></li>
+          <li><a href="cafes.html">Coffee Shops & Restaurants</a></li>
+          <li><a href="hotlines.html">Emergency Hotlines</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Good to know</h4>
+        <ul>
+          <li>Municipality of Claveria, Misamis Oriental, Philippines</li>
+          <li>Most spots are along Route 955 (Gingoog–Claveria Road)</li>
+          <li>Highland weather can be cold and misty — bring a jacket</li>
+          <li>Save the <a href="hotlines.html">emergency hotlines</a> before you go</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Claveria Escape — community tourism guide. Content compiled from the Claveria Escape community Drive folder.</span>
+      <span>A community guide from Claveria, Misamis Oriental</span>
+    </div>
+  </div>
+</footer>
+<nav class="mobile-tabbar" aria-label="Quick navigation"><a class="mobile-tab " href="index.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/></svg><span>Home</span></a><a class="mobile-tab active" href="map.html" aria-current=page><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg><span>Map</span></a><a class="mobile-tab " href="saved.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span>Saved</span><b class=tab-count data-saved-count></b></a><a class="mobile-tab " href="hotlines.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Hotlines</span></a></nav>
+<button class="back-top" aria-label="Back to top">Top</button><script src="assets/js/leaflet.js" defer></script>
+<script src="assets/js/map.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

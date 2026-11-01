@@ -59,6 +59,16 @@ def osm_embed_url(slug):
     return "https://www.openstreetmap.org/export/embed.html?bbox=" + quote(bbox, safe=",") + "&layer=mapnik&marker=" + quote(marker, safe=",")
 
 
+def osm_region_embed_url():
+    points = list(MAP_LOCATIONS.values())
+    lats = [float(point["lat"]) for point in points]
+    lons = [float(point["lon"]) for point in points]
+    lat_pad, lon_pad = 0.018, 0.025
+    bbox = f"{min(lons) - lon_pad:.6f},{min(lats) - lat_pad:.6f},{max(lons) + lon_pad:.6f},{max(lats) + lat_pad:.6f}"
+    lat_mid, lon_mid = (min(lats) + max(lats)) / 2, (min(lons) + max(lons)) / 2
+    return "https://www.openstreetmap.org/export/embed.html?bbox=" + quote(bbox, safe=",") + "&layer=mapnik&marker=" + quote(f"{lat_mid:.7f},{lon_mid:.7f}", safe=",")
+
+
 def img_dir(cat, slug):
     d = os.path.join(IMG, cat, slug)
     if not os.path.isdir(d):
@@ -80,6 +90,21 @@ INFO = {
     "clock": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     "tag": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22 2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>',
 }
+
+ICON_PATHS = {
+    "home": '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/>',
+    "map": '<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/>',
+    "heart": '<path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/>',
+    "share": '<path d="M12 15V3m-5 5 5-5 5 5"/><path d="M5 12v8h14v-8"/>',
+    "back": '<path d="m15 18-6-6 6-6"/>',
+    "directions": '<path d="M12 21 3 12l9-9 9 9-9 9Z"/><path d="M12 16V8m-3 3 3-3 3 3"/>',
+    "close": '<path d="m18 6-12 12M6 6l12 12"/>',
+    "phone": '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
+}
+
+
+def icon(name, size=20):
+    return f'<svg class="ui-icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICON_PATHS[name]}</svg>'
 
 
 def header(prefix, active):
@@ -106,8 +131,13 @@ def header(prefix, active):
 </header>'''
 
 
-def footer(prefix):
+def footer(prefix, active=""):
     year = 2026
+    tabs = [("index.html", "Home", "home"), ("map.html", "Map", "map"), ("saved.html", "Saved", "saved"), ("hotlines.html", "Hotlines", "hotlines")]
+    tab_html = "".join(
+        f'<a class="mobile-tab {"active" if key == active else ""}" href="{prefix}{href}" {"aria-current=page" if key == active else ""}>{icon("heart" if key == "saved" else "phone" if key == "hotlines" else key)}<span>{label}</span>{"<b class=tab-count data-saved-count></b>" if key == "saved" else ""}</a>'
+        for href, label, key in tabs
+    )
     return f'''<footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -121,6 +151,8 @@ def footer(prefix):
       <div>
         <h4>Explore</h4>
         <ul>
+          <li><a href="{prefix}map.html">Area map</a></li>
+          <li><a href="{prefix}saved.html">Saved places</a></li>
           <li><a href="{prefix}staycation.html">Staycations & Resorts</a></li>
           <li><a href="{prefix}falls.html">Waterfalls</a></li>
           <li><a href="{prefix}cafes.html">Coffee Shops & Restaurants</a></li>
@@ -143,6 +175,7 @@ def footer(prefix):
     </div>
   </div>
 </footer>
+<nav class="mobile-tabbar" aria-label="Quick navigation">{tab_html}</nav>
 <button class="back-top" aria-label="Back to top">Top</button>'''
 
 
@@ -169,8 +202,9 @@ def head(title, description, prefix, og=True):
 <body>'''
 
 
-def scripts(prefix):
-    return f'<script src="{prefix}assets/js/main.js" defer></script>\n</body>\n</html>\n'
+def scripts(prefix, include_map=False):
+    map_scripts = f'<script src="{prefix}assets/js/leaflet.js" defer></script>\n<script src="{prefix}assets/js/map.js" defer></script>\n' if include_map else ""
+    return map_scripts + f'<script src="{prefix}assets/js/main.js" defer></script>\n</body>\n</html>\n'
 
 
 def place_card(p, prefix):
@@ -180,43 +214,68 @@ def place_card(p, prefix):
     badge_txt = "Temporarily closed" if p["slug"] == "twin-falls" else f"{len(imgs)} photos" if imgs else ""
     badge_html = f'<span class="badge{warn}">{esc(badge_txt)}</span>' if badge_txt else ""
     img_html = f'<img src="{prefix}{thumb}" alt="{esc(p["name"])}" loading="lazy" decoding="async">' if thumb else ""
-    return f'''<a class="place-card reveal" href="{prefix}place/{p["slug"]}.html">
-  <div class="thumb">{img_html}{badge_html}</div>
-  <div class="body">
-    <h3>{esc(p["name"])}</h3>
-    <span class="tagline">{esc(p["tagline"])}</span>
-    <span class="loc">{esc(p["location"])}</span>
-  </div>
-</a>'''
+    search_text = " ".join([p["name"], p["tagline"], p["location"], *p["tags"]])
+    tags_text = " | ".join(plain(tag).lower() for tag in p["tags"])
+    return f'''<article class="place-card reveal" data-place-card data-place-slug="{esc(p["slug"])}" data-tags="{esc(tags_text)}" data-search="{esc(search_text)}">
+  <a class="place-card-link" href="{prefix}place/{p["slug"]}.html">
+    <div class="thumb">{img_html}{badge_html}</div>
+    <div class="body">
+      <h3>{esc(p["name"])}</h3>
+      <span class="tagline">{esc(p["tagline"])}</span>
+      <span class="loc">{esc(p["location"])}</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="{esc(p["slug"])}" data-place-name="{esc(p["name"])}" aria-label="Save {esc(p["name"])}" aria-pressed="false" title="Save place">{icon("heart")}<span class="sr-only">Save place</span></button>
+</article>'''
 
 
 def category_page(cat_key):
     cat = CATEGORIES[cat_key]
     places = [p for p in PLACES if p["category"] == cat_key]
     cards = "\n".join(place_card(p, "") for p in places)
+    filters_html = ""
+    if cat_key == "cafes":
+        filters = [
+            ("all", "All"),
+            ("coffee", "Coffee"),
+            ("scenic|view|mountain view", "Scenic views"),
+            ("cozy", "Cozy"),
+            ("restaurant", "Restaurants"),
+            ("route 955", "Route 955"),
+            ("24/7", "24/7"),
+        ]
+        filters_html = '<div class="filter-row" role="group" aria-label="Filter coffee shops">' + "".join(
+            f'<button class="filter-chip{" active" if value == "all" else ""}" type="button" data-filter-value="{esc(value)}" aria-pressed="{"true" if value == "all" else "false"}">{esc(label)}</button>'
+            for value, label in filters
+        ) + '</div>'
+    main_class = "app-screen category-screen cafe-screen" if cat_key == "cafes" else "app-screen category-screen"
+    search_placeholder = "Search coffee shops, food, or area" if cat_key == "cafes" else f"Search {cat['title'].lower()} by name, barangay or tag"
     body = f'''{header("", cat_key)}
-<main>
-  <section class="section" style="padding-bottom:20px">
+<main class="{main_class}">
+  <section class="section category-section" style="padding-bottom:20px">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head category-heading">
         <div>
           <span class="eyebrow">Explore Claveria</span>
           <h2>{esc(cat['title'])}</h2>
           <p>{esc(cat['blurb'])}</p>
         </div>
-        <span class="chip">{len(places)} places</span>
+        <span class="chip place-count">{len(places)} places</span>
       </div>
       <div class="search-bar">
-        <input id="place-search" type="search" placeholder="Search {esc(cat['title'].lower())} by name, barangay or tag" autocomplete="off">
+        <label class="sr-only" for="place-search">Search places</label>
+        {SEARCH}
+        <input id="place-search" type="search" placeholder="{esc(search_placeholder)}" autocomplete="off">
       </div>
+{filters_html}
       <div class="card-grid" id="card-grid">
 {cards}
       </div>
-      <div class="no-results" id="no-results">No places match your search. Try another name or barangay.</div>
+      <div class="no-results" id="no-results">No places match your search. Try another name, area, or filter.</div>
     </div>
   </section>
 </main>
-{footer("")}'''
+{footer("", "home")}'''
     return head(cat["title"], cat["blurb"] + f" — {len(places)} places in Claveria, Misamis Oriental.", "") + body + scripts("")
 
 
@@ -224,6 +283,7 @@ def place_page(p):
     prefix = "../"
     cat = CATEGORIES[p["category"]]
     imgs = place_images(p)
+    cover_img = imgs[0] if imgs else "assets/img/brand/og.jpg"
     gallery = ""
     for i, src in enumerate(imgs):
         cls = "g-main" if i == 0 else ""
@@ -266,20 +326,55 @@ def place_page(p):
   </div>
   <p class="map-note">{esc(map_note)} Map data © OpenStreetMap contributors.</p>
 </section>'''
+
+    mobile_cover = f'''<div class="mobile-place-cover">
+  <img src="{prefix}{cover_img}" alt="{esc(p["name"])} in Claveria" fetchpriority="high" decoding="async">
+  <div class="cover-shade"></div>
+  <div class="cover-controls">
+    <a class="cover-back" href="{prefix}{p["category"]}.html" aria-label="Back to {esc(cat["title"])}">{icon("back")}<span>Back</span></a>
+    <div class="cover-actions">
+      <button class="cover-icon save-toggle" type="button" data-save-place="{esc(p["slug"])}" data-place-name="{esc(p["name"])}" aria-label="Save {esc(p["name"])}" aria-pressed="false" title="Save place">{icon("heart")}</button>
+      <button class="cover-icon" type="button" data-share-place data-share-title="{esc(p["name"])}" aria-label="Share {esc(p["name"])}" title="Share place">{icon("share")}</button>
+    </div>
+  </div>
+</div>'''
+
+    desktop_tools = f'''<div class="place-tools">
+  <button class="tool-button save-toggle" type="button" data-save-place="{esc(p["slug"])}" data-place-name="{esc(p["name"])}" aria-label="Save {esc(p["name"])}" aria-pressed="false">{icon("heart")}<span>Save</span></button>
+  <button class="tool-button" type="button" data-share-place data-share-title="{esc(p["name"])}">{icon("share")}<span>Share</span></button>
+</div>'''
+
+    action_contact = ""
+    if p["contact"]:
+        _, _, contact_href = p["contact"][0]
+        contact_label = "Call" if contact_href.startswith("tel:") else "Email" if contact_href.startswith("mailto:") else "Message" if "wa.me" in contact_href else "Contact"
+        action_icon = icon("phone") if contact_href.startswith("tel:") else icon("share")
+        action_contact = f'<a class="detail-action secondary-action" href="{esc(contact_href)}">{action_icon}<span>{contact_label}</span></a>'
+    action_dock = f'''<div class="place-action-dock" aria-label="Place actions">
+  <a class="detail-action primary-action" href="{esc(maps_url(p["maps_query"]))}" target="_blank" rel="noopener">{icon("directions")}<span>Directions</span></a>
+{action_contact}
+</div>'''
+
     body = f'''{header(prefix, p["category"])}
-<main>
+<main class="place-screen">
+  {mobile_cover}
   <div class="wrap">
     <nav class="crumbs"><a href="{prefix}index.html">Home</a> › <a href="{prefix}{p["category"]}.html">{esc(cat["title"])}</a> › {esc(p["name"])}</nav>
     <div class="place-hero">
-      <h1>{esc(p["name"])}</h1>
-      <p class="tagline">{esc(p["tagline"])}</p>
+      <div class="place-title-row">
+        <div>
+          <h1>{esc(p["name"])}</h1>
+          <p class="tagline">{esc(p["tagline"])}</p>
+        </div>
+        {desktop_tools}
+      </div>
       <div class="meta-row">
         <span class="chip">{esc(cat["title"])}</span>
         {warn_chip}
         {tags}
       </div>
     </div>
-    <div class="place-layout">
+    <div class="place-layout" id="visitor-info">
       <div>
         <div class="gallery" id="gallery">
 {gallery}
@@ -311,17 +406,17 @@ def place_page(p):
     </section>
   </div>
 </main>
+{action_dock}
 <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
   <button class="lb-close" aria-label="Close">×</button>
   <button class="lb-nav lb-prev" aria-label="Previous">‹</button>
-  <img src="" alt="">
+  <img src="" alt="Place photo">
   <button class="lb-nav lb-next" aria-label="Next">›</button>
   <div class="lb-count"></div>
 </div>
-{footer(prefix)}'''
+{footer(prefix, "home")}'''
     desc = f"{p['tagline']} — {p['location']}. {p['about'][:140]}…"
     return head(p["name"], desc, prefix) + body + scripts(prefix)
-
 
 def hotlines_page():
     groups_html = ""
@@ -358,24 +453,27 @@ def hotlines_page():
     </div>
   </section>
 </main>
-{footer("")}'''
+{footer("", "hotlines")}'''
     return head("Emergency Hotlines", "Claveria, Misamis Oriental emergency hotlines — MDDRMO, police, hospital & rescue contacts. Save them before you travel.", "") + body + scripts("")
 
 
 def index_page():
     cats_html = ""
-    for key in ("staycation", "falls", "cafes"):
+    category_order = ("cafes", "falls", "staycation")
+    category_card_titles = {"cafes": "Coffee Shops", "falls": "Waterfalls", "staycation": "Stays"}
+    sample_slugs = {"cafes": "skye-88-cafe", "falls": "lantawon-falls", "staycation": "hiraya-farm-escape"}
+    for key in category_order:
         cat = CATEGORIES[key]
         n = len([p for p in PLACES if p["category"] == key])
-        sample = next(p for p in PLACES if p["category"] == key)
+        sample = next((p for p in PLACES if p["slug"] == sample_slugs[key]), next(p for p in PLACES if p["category"] == key))
         imgs = place_images(sample)
         img = imgs[0] if imgs else "assets/img/brand/hero.jpg"
-        cats_html += f'''<a class="cat-card reveal" href="{key}.html">
+        cats_html += f'''<a class="cat-card cat-card-{key} reveal" href="{key}.html">
   <div class="cat-img"><img src="{img}" alt="{esc(cat['title'])}" loading="lazy" decoding="async"></div>
   <span class="count">{n} places</span>
   <div class="cat-body">
     <div class="cat-kicker">{key.upper()}</div>
-    <h3>{esc(cat['title'])}</h3>
+    <h3>{esc(category_card_titles[key])}</h3>
     <p>{esc(cat['blurb'])}</p>
   </div>
 </a>'''
@@ -383,9 +481,16 @@ def index_page():
     feat_cards = "\n".join(place_card(p, "") for p in featured)
     counts = {k: len([p for p in PLACES if p["category"] == k]) for k in ("staycation", "falls", "cafes")}
     body = f'''{header("", "")}
-<main>
+<main class="home-screen">
+  <section class="mobile-greeting">
+    <div class="wrap">
+      <p class="greeting-kicker" data-greeting>Good morning,</p>
+      <h2>Explorer</h2>
+      <p class="greeting-prompt">Claveria is calling. Where will you go today?</p>
+    </div>
+  </section>
   <section class="hero">
-    <div class="hero-bg"><img src="assets/img/brand/hero.jpg" alt="Municipality of Claveria, Misamis Oriental" fetchpriority="high" decoding="async"></div>
+    <div class="hero-bg"><picture><source media="(max-width: 720px)" srcset="assets/img/staycation/hiraya-farm-escape/1.jpg"><img src="assets/img/brand/hero.jpg" alt="Claveria highlands and visitor destinations" fetchpriority="high" decoding="async"></picture></div>
     <div class="hero-content">
       <h1>Escape to <em>Claveria</em></h1>
       <p class="sub">Cool mountain air, hidden waterfalls, cozy cabins and the best café stops along Route 955 — your complete guide to Claveria, Misamis Oriental.</p>
@@ -463,8 +568,117 @@ def index_page():
     </div>
   </section>
 </main>
-{footer("")}'''
+{footer("", "home")}'''
     return head(SITE["tagline"], SITE["description"], "") + body + scripts("")
+
+
+def map_page():
+    place_items = []
+    cards = []
+    for place in PLACES:
+        point = MAP_LOCATIONS.get(place["slug"])
+        if not point:
+            continue
+        item = {
+            "slug": place["slug"],
+            "name": plain(place["name"]),
+            "category": place["category"],
+            "category_title": plain(CATEGORIES[place["category"]]["title"]),
+            "location": plain(place["location"]),
+            "lat": float(point["lat"]),
+            "lon": float(point["lon"]),
+            "approximate": place["slug"] in MAP_APPROXIMATE,
+        }
+        place_items.append(item)
+        approximate = '<span class="map-approximate">Approximate pin</span>' if item["approximate"] else ""
+        cards.append(f'''<article class="map-place-card" data-map-item data-map-category="{esc(place["category"])}" data-search="{esc(place["name"] + ' ' + place["location"] + ' ' + CATEGORIES[place["category"]]['title'])}">
+  <a class="map-place-link" href="place/{esc(place["slug"])}.html">
+    <span class="map-place-category">{esc(CATEGORIES[place["category"]]['title'])}</span>
+    <h3>{esc(place["name"])}</h3>
+    <span class="map-place-location">{esc(place["location"])}</span>
+{approximate}
+  </a>
+  <a class="map-direction-link" href="{esc(maps_url(place['maps_query']))}" target="_blank" rel="noopener">Directions</a>
+</article>''')
+
+    filters = [("all", "All"), ("cafes", "Coffee shops"), ("falls", "Waterfalls"), ("staycation", "Staycations")]
+    filter_html = '<div class="filter-row map-filter-row" role="group" aria-label="Filter map locations">' + "".join(
+        f'<button class="filter-chip{" active" if value == "all" else ""}" type="button" data-map-filter="{value}" aria-pressed="{"true" if value == "all" else "false"}">{label}</button>'
+        for value, label in filters
+    ) + '</div>'
+    map_json = json.dumps(place_items, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    body = f'''{header("", "")}
+<main class="app-screen map-screen">
+  <section class="section map-section">
+    <div class="wrap">
+      <div class="section-head map-heading">
+        <div>
+          <span class="eyebrow">Get around</span>
+          <h2>Claveria map</h2>
+          <p>Browse the places in this guide, then open a listing for its location details.</p>
+        </div>
+        <span class="chip place-count">{len(place_items)} mapped places</span>
+      </div>
+      <div class="map-explorer">
+        <div id="claveria-map" class="leaflet-map" aria-label="Map of places in Claveria" hidden></div>
+        <div class="map-fallback">
+          <iframe title="Overview map of Claveria places" src="{esc(osm_region_embed_url())}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <p class="map-note">Map data © OpenStreetMap contributors. Four location pins are approximate; their place pages include a note. For turn-by-turn directions, use the Directions link.</p>
+      <div class="map-directory-head">
+        <div>
+          <h3>Find a place</h3>
+          <p>{len(place_items)} listings in the Claveria guide</p>
+        </div>
+      </div>
+      <div class="search-bar map-search-bar">
+        <label class="sr-only" for="map-search">Search mapped places</label>
+        {SEARCH}
+        <input id="map-search" type="search" placeholder="Search by place or area" autocomplete="off">
+      </div>
+      {filter_html}
+      <div class="map-place-list" id="map-place-list">
+{''.join(cards)}
+      </div>
+      <div class="no-results" id="map-no-results">No mapped places match your search.</div>
+    </div>
+  </section>
+</main>
+<script id="map-places-data" type="application/json">{map_json}</script>
+{footer("", "map")}'''
+    page_head = head("Claveria Map", "Interactive map and directory of Claveria, Misamis Oriental places, cafés, waterfalls, and stays.", "")
+    page_head = page_head.replace("</head>", '<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">\n</head>')
+    return page_head + body + scripts("", include_map=True)
+
+
+def saved_page():
+    cards = "\n".join(place_card(place, "") for place in PLACES)
+    body = f'''{header("", "")}
+<main class="app-screen saved-screen">
+  <section class="section saved-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Your shortlist</span>
+          <h2>Saved places</h2>
+          <p>Keep the cafés, waterfalls, and stays you want to come back to. Saved places stay on this device.</p>
+        </div>
+        <span class="chip saved-count-label"><span data-saved-total>0</span> saved</span>
+      </div>
+      <div class="empty-state" id="saved-empty" hidden>
+        <h3>No saved places yet</h3>
+        <p>Tap the heart on any place to add it to your shortlist.</p>
+        <a class="btn btn-green" href="cafes.html">Explore coffee shops</a>
+      </div>
+      <div class="card-grid" id="saved-grid" data-saved-grid>
+{cards}
+      </div>
+    </div>
+  </section>
+</main>
+{footer("", "saved")}'''
+    return head("Saved Places", "Your saved Claveria cafés, waterfalls, and stays — stored on this device.", "") + body + scripts("")
 
 
 def write(path, content):
@@ -476,7 +690,7 @@ def write(path, content):
 
 
 def sitemap():
-    pages = ["", "staycation.html", "falls.html", "cafes.html", "hotlines.html"]
+    pages = ["", "map.html", "saved.html", "staycation.html", "falls.html", "cafes.html", "hotlines.html"]
     pages += [f"place/{p['slug']}.html" for p in PLACES]
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in pages:
@@ -500,6 +714,8 @@ def main():
     write("index.html", index_page())
     for key in ("staycation", "falls", "cafes"):
         write(f"{key}.html", category_page(key))
+    write("map.html", map_page())
+    write("saved.html", saved_page())
     write("hotlines.html", hotlines_page())
     for p in PLACES:
         write(f"place/{p['slug']}.html", place_page(p))

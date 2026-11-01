@@ -27,119 +27,158 @@
     <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation"><a href="index.html" class=" ">Home</a><a href="staycation.html" class=" ">Staycations</a><a href="falls.html" class=" ">Falls</a><a href="cafes.html" class="active ">Cafés & Restos</a><a href="hotlines.html" class=" hot">Hotlines</a></nav>
   </div>
 </header>
-<main>
-  <section class="section" style="padding-bottom:20px">
+<main class="app-screen category-screen cafe-screen">
+  <section class="section category-section" style="padding-bottom:20px">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head category-heading">
         <div>
           <span class="eyebrow">Explore Claveria</span>
           <h2>Coffee Shops &amp; Restaurants</h2>
           <p>Café stops and resto-bars perfect for breaks along Route 955.</p>
         </div>
-        <span class="chip">12 places</span>
+        <span class="chip place-count">12 places</span>
       </div>
       <div class="search-bar">
-        <input id="place-search" type="search" placeholder="Search coffee shops &amp; restaurants by name, barangay or tag" autocomplete="off">
+        <label class="sr-only" for="place-search">Search places</label>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="place-search" type="search" placeholder="Search coffee shops, food, or area" autocomplete="off">
       </div>
+<div class="filter-row" role="group" aria-label="Filter coffee shops"><button class="filter-chip active" type="button" data-filter-value="all" aria-pressed="true">All</button><button class="filter-chip" type="button" data-filter-value="coffee" aria-pressed="false">Coffee</button><button class="filter-chip" type="button" data-filter-value="scenic|view|mountain view" aria-pressed="false">Scenic views</button><button class="filter-chip" type="button" data-filter-value="cozy" aria-pressed="false">Cozy</button><button class="filter-chip" type="button" data-filter-value="restaurant" aria-pressed="false">Restaurants</button><button class="filter-chip" type="button" data-filter-value="route 955" aria-pressed="false">Route 955</button><button class="filter-chip" type="button" data-filter-value="24/7" aria-pressed="false">24/7</button></div>
       <div class="card-grid" id="card-grid">
-<a class="place-card reveal" href="place/jacos-stopover.html">
-  <div class="thumb"><img src="assets/img/cafes/jacos-stopover/1.jpg" alt="JaCo&#x27;s Stopover" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>JaCo&#x27;s Stopover</h3>
-    <span class="tagline">Garden stopover for coffee, pasta &amp; local delicacies</span>
-    <span class="loc">Zone 1, Barangay Luna, Route 955, Claveria</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/the-promise-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/the-promise-cafe/1.jpg" alt="The Promise Cafe" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>The Promise Cafe</h3>
-    <span class="tagline">Scenic café &amp; restaurant on Claveria Road</span>
-    <span class="loc">Claveria Road, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/kasadya-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/kasadya-cafe/1.jpg" alt="Kasadya Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Kasadya Cafe</h3>
-    <span class="tagline">Homey garden café with comfort food</span>
-    <span class="loc">Barangay Tamboboan, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/the-sibs-coffee.html">
-  <div class="thumb"><img src="assets/img/cafes/the-sibs-coffee/1.jpg" alt="The Sibs Coffee" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>The Sibs Coffee</h3>
-    <span class="tagline">Local coffee shop in Claveria</span>
-    <span class="loc">Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/the-haze-kaffe.html">
-  <div class="thumb"><img src="assets/img/cafes/the-haze-kaffe/1.jpg" alt="The Haze Kaffe" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>The Haze Kaffe</h3>
-    <span class="tagline">Mountainside café &amp; mini-resort on the Route 955 border</span>
-    <span class="loc">Route 955, Sitio Civoleg, Brgy. Lunotan (Gingoog–Claveria mountain border), Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/hamugaway-ni-dodongstan.html">
-  <div class="thumb"><img src="assets/img/cafes/hamugaway-ni-dodongstan/1.jpg" alt="Hamugaway ni Dodongstan Café and Restaurant" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Hamugaway ni Dodongstan Café and Restaurant</h3>
-    <span class="tagline">Filipino dishes &amp; coffee with scenic mountain views</span>
-    <span class="loc">Route 955, Barangay Ane-i, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/sanctum-by-cnc.html">
-  <div class="thumb"><img src="assets/img/cafes/sanctum-by-cnc/1.jpg" alt="Sanctum by CNC Cafe" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
-  <div class="body">
-    <h3>Sanctum by CNC Cafe</h3>
-    <span class="tagline">Cozy coffee break in Poblacion</span>
-    <span class="loc">Magantol Village, Zone 6, Artadi Street, Poblacion, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/chelseas-cafe-restaurant.html">
-  <div class="thumb"><img src="assets/img/cafes/chelseas-cafe-restaurant/1.jpg" alt="Chelsea&#x27;s Cafe and Restaurant" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Chelsea&#x27;s Cafe and Restaurant</h3>
-    <span class="tagline">Relaxing stop in Lanise for food &amp; refreshments</span>
-    <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/julios-cafe-restaurant.html">
-  <div class="thumb"><img src="assets/img/cafes/julios-cafe-restaurant/1.jpg" alt="Julio&#x27;s Cafe and Restaurant" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Julio&#x27;s Cafe and Restaurant</h3>
-    <span class="tagline">Convenient Route 955 stop in Mat-i</span>
-    <span class="loc">Route 955 (Big C Route), Barangay Mat-i, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/lone-wolf-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/lone-wolf-cafe/1.jpg" alt="Lone Wolf Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Lone Wolf Cafe</h3>
-    <span class="tagline">Claveria&#x27;s first 24/7 introvert-themed coffee shop</span>
-    <span class="loc">Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955)</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/don-narciso-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/don-narciso-cafe/1.jpg" alt="Don Narciso Cafe" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Don Narciso Cafe</h3>
-    <span class="tagline">Scenic Lanise stopover with mountain views</span>
-    <span class="loc">Zone 6, Brgy. Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/skye-88-cafe.html">
-  <div class="thumb"><img src="assets/img/cafes/skye-88-cafe/1.jpg" alt="Skye 88 Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Skye 88 Cafe</h3>
-    <span class="tagline">Glass-house café inside Hiraya Farm Escape</span>
-    <span class="loc">Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
+<article class="place-card reveal" data-place-card data-place-slug="jacos-stopover" data-tags="cafe | restaurant | garden" data-search="JaCo&#x27;s Stopover Garden stopover for coffee, pasta &amp; local delicacies Zone 1, Barangay Luna, Route 955, Claveria cafe restaurant garden">
+  <a class="place-card-link" href="place/jacos-stopover.html">
+    <div class="thumb"><img src="assets/img/cafes/jacos-stopover/1.jpg" alt="JaCo&#x27;s Stopover" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>JaCo&#x27;s Stopover</h3>
+      <span class="tagline">Garden stopover for coffee, pasta &amp; local delicacies</span>
+      <span class="loc">Zone 1, Barangay Luna, Route 955, Claveria</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="jacos-stopover" data-place-name="JaCo&#x27;s Stopover" aria-label="Save JaCo&#x27;s Stopover" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="the-promise-cafe" data-tags="cafe | restaurant | scenic" data-search="The Promise Cafe Scenic café &amp; restaurant on Claveria Road Claveria Road, Claveria, Misamis Oriental cafe restaurant scenic">
+  <a class="place-card-link" href="place/the-promise-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/the-promise-cafe/1.jpg" alt="The Promise Cafe" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>The Promise Cafe</h3>
+      <span class="tagline">Scenic café &amp; restaurant on Claveria Road</span>
+      <span class="loc">Claveria Road, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="the-promise-cafe" data-place-name="The Promise Cafe" aria-label="Save The Promise Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="kasadya-cafe" data-tags="cafe | garden | comfort food" data-search="Kasadya Cafe Homey garden café with comfort food Barangay Tamboboan, Claveria, Misamis Oriental cafe garden comfort food">
+  <a class="place-card-link" href="place/kasadya-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/kasadya-cafe/1.jpg" alt="Kasadya Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Kasadya Cafe</h3>
+      <span class="tagline">Homey garden café with comfort food</span>
+      <span class="loc">Barangay Tamboboan, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="kasadya-cafe" data-place-name="Kasadya Cafe" aria-label="Save Kasadya Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="the-sibs-coffee" data-tags="cafe | coffee" data-search="The Sibs Coffee Local coffee shop in Claveria Claveria, Misamis Oriental cafe coffee">
+  <a class="place-card-link" href="place/the-sibs-coffee.html">
+    <div class="thumb"><img src="assets/img/cafes/the-sibs-coffee/1.jpg" alt="The Sibs Coffee" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>The Sibs Coffee</h3>
+      <span class="tagline">Local coffee shop in Claveria</span>
+      <span class="loc">Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="the-sibs-coffee" data-place-name="The Sibs Coffee" aria-label="Save The Sibs Coffee" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="the-haze-kaffe" data-tags="cafe | mountain | resort" data-search="The Haze Kaffe Mountainside café &amp; mini-resort on the Route 955 border Route 955, Sitio Civoleg, Brgy. Lunotan (Gingoog–Claveria mountain border), Misamis Oriental cafe mountain resort">
+  <a class="place-card-link" href="place/the-haze-kaffe.html">
+    <div class="thumb"><img src="assets/img/cafes/the-haze-kaffe/1.jpg" alt="The Haze Kaffe" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>The Haze Kaffe</h3>
+      <span class="tagline">Mountainside café &amp; mini-resort on the Route 955 border</span>
+      <span class="loc">Route 955, Sitio Civoleg, Brgy. Lunotan (Gingoog–Claveria mountain border), Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="the-haze-kaffe" data-place-name="The Haze Kaffe" aria-label="Save The Haze Kaffe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="hamugaway-ni-dodongstan" data-tags="restaurant | cafe | mountain view" data-search="Hamugaway ni Dodongstan Café and Restaurant Filipino dishes &amp; coffee with scenic mountain views Route 955, Barangay Ane-i, Claveria, Misamis Oriental restaurant cafe mountain view">
+  <a class="place-card-link" href="place/hamugaway-ni-dodongstan.html">
+    <div class="thumb"><img src="assets/img/cafes/hamugaway-ni-dodongstan/1.jpg" alt="Hamugaway ni Dodongstan Café and Restaurant" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Hamugaway ni Dodongstan Café and Restaurant</h3>
+      <span class="tagline">Filipino dishes &amp; coffee with scenic mountain views</span>
+      <span class="loc">Route 955, Barangay Ane-i, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="hamugaway-ni-dodongstan" data-place-name="Hamugaway ni Dodongstan Café and Restaurant" aria-label="Save Hamugaway ni Dodongstan Café and Restaurant" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="sanctum-by-cnc" data-tags="cafe | cozy" data-search="Sanctum by CNC Cafe Cozy coffee break in Poblacion Magantol Village, Zone 6, Artadi Street, Poblacion, Claveria, Misamis Oriental cafe cozy">
+  <a class="place-card-link" href="place/sanctum-by-cnc.html">
+    <div class="thumb"><img src="assets/img/cafes/sanctum-by-cnc/1.jpg" alt="Sanctum by CNC Cafe" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
+    <div class="body">
+      <h3>Sanctum by CNC Cafe</h3>
+      <span class="tagline">Cozy coffee break in Poblacion</span>
+      <span class="loc">Magantol Village, Zone 6, Artadi Street, Poblacion, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="sanctum-by-cnc" data-place-name="Sanctum by CNC Cafe" aria-label="Save Sanctum by CNC Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="chelseas-cafe-restaurant" data-tags="cafe | restaurant" data-search="Chelsea&#x27;s Cafe and Restaurant Relaxing stop in Lanise for food &amp; refreshments Barangay Lanise, Claveria, Misamis Oriental cafe restaurant">
+  <a class="place-card-link" href="place/chelseas-cafe-restaurant.html">
+    <div class="thumb"><img src="assets/img/cafes/chelseas-cafe-restaurant/1.jpg" alt="Chelsea&#x27;s Cafe and Restaurant" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Chelsea&#x27;s Cafe and Restaurant</h3>
+      <span class="tagline">Relaxing stop in Lanise for food &amp; refreshments</span>
+      <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="chelseas-cafe-restaurant" data-place-name="Chelsea&#x27;s Cafe and Restaurant" aria-label="Save Chelsea&#x27;s Cafe and Restaurant" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="julios-cafe-restaurant" data-tags="restaurant | cafe | route 955" data-search="Julio&#x27;s Cafe and Restaurant Convenient Route 955 stop in Mat-i Route 955 (Big C Route), Barangay Mat-i, Claveria, Misamis Oriental restaurant cafe route 955">
+  <a class="place-card-link" href="place/julios-cafe-restaurant.html">
+    <div class="thumb"><img src="assets/img/cafes/julios-cafe-restaurant/1.jpg" alt="Julio&#x27;s Cafe and Restaurant" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Julio&#x27;s Cafe and Restaurant</h3>
+      <span class="tagline">Convenient Route 955 stop in Mat-i</span>
+      <span class="loc">Route 955 (Big C Route), Barangay Mat-i, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="julios-cafe-restaurant" data-place-name="Julio&#x27;s Cafe and Restaurant" aria-label="Save Julio&#x27;s Cafe and Restaurant" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="lone-wolf-cafe" data-tags="cafe | 24/7 | coffee" data-search="Lone Wolf Cafe Claveria&#x27;s first 24/7 introvert-themed coffee shop Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955) cafe 24/7 coffee">
+  <a class="place-card-link" href="place/lone-wolf-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/lone-wolf-cafe/1.jpg" alt="Lone Wolf Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Lone Wolf Cafe</h3>
+      <span class="tagline">Claveria&#x27;s first 24/7 introvert-themed coffee shop</span>
+      <span class="loc">Brgy. Luna, Claveria, Misamis Oriental (in front of the Luna Barangay Hall, along Route 955)</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="lone-wolf-cafe" data-place-name="Lone Wolf Cafe" aria-label="Save Lone Wolf Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="don-narciso-cafe" data-tags="cafe | restaurant | scenic" data-search="Don Narciso Cafe Scenic Lanise stopover with mountain views Zone 6, Brgy. Lanise, Claveria, Misamis Oriental cafe restaurant scenic">
+  <a class="place-card-link" href="place/don-narciso-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/don-narciso-cafe/1.jpg" alt="Don Narciso Cafe" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Don Narciso Cafe</h3>
+      <span class="tagline">Scenic Lanise stopover with mountain views</span>
+      <span class="loc">Zone 6, Brgy. Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="don-narciso-cafe" data-place-name="Don Narciso Cafe" aria-label="Save Don Narciso Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="skye-88-cafe" data-tags="cafe | glass house | view | inside hiraya" data-search="Skye 88 Cafe Glass-house café inside Hiraya Farm Escape Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental cafe glass house view inside hiraya">
+  <a class="place-card-link" href="place/skye-88-cafe.html">
+    <div class="thumb"><img src="assets/img/cafes/skye-88-cafe/1.jpg" alt="Skye 88 Cafe" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Skye 88 Cafe</h3>
+      <span class="tagline">Glass-house café inside Hiraya Farm Escape</span>
+      <span class="loc">Inside Hiraya Farm Escape, Route 955, Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="skye-88-cafe" data-place-name="Skye 88 Cafe" aria-label="Save Skye 88 Cafe" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
       </div>
-      <div class="no-results" id="no-results">No places match your search. Try another name or barangay.</div>
+      <div class="no-results" id="no-results">No places match your search. Try another name, area, or filter.</div>
     </div>
   </section>
 </main>
@@ -156,6 +195,8 @@
       <div>
         <h4>Explore</h4>
         <ul>
+          <li><a href="map.html">Area map</a></li>
+          <li><a href="saved.html">Saved places</a></li>
           <li><a href="staycation.html">Staycations & Resorts</a></li>
           <li><a href="falls.html">Waterfalls</a></li>
           <li><a href="cafes.html">Coffee Shops & Restaurants</a></li>
@@ -178,6 +219,7 @@
     </div>
   </div>
 </footer>
+<nav class="mobile-tabbar" aria-label="Quick navigation"><a class="mobile-tab active" href="index.html" aria-current=page><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/></svg><span>Home</span></a><a class="mobile-tab " href="map.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg><span>Map</span></a><a class="mobile-tab " href="saved.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span>Saved</span><b class=tab-count data-saved-count></b></a><a class="mobile-tab " href="hotlines.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Hotlines</span></a></nav>
 <button class="back-top" aria-label="Back to top">Top</button><script src="assets/js/main.js" defer></script>
 </body>
 </html>

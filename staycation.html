@@ -27,135 +27,180 @@
     <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation"><a href="index.html" class=" ">Home</a><a href="staycation.html" class="active ">Staycations</a><a href="falls.html" class=" ">Falls</a><a href="cafes.html" class=" ">Cafés & Restos</a><a href="hotlines.html" class=" hot">Hotlines</a></nav>
   </div>
 </header>
-<main>
-  <section class="section" style="padding-bottom:20px">
+<main class="app-screen category-screen">
+  <section class="section category-section" style="padding-bottom:20px">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head category-heading">
         <div>
           <span class="eyebrow">Explore Claveria</span>
           <h2>Staycations &amp; Resorts</h2>
           <p>Cabins, campsites, farm resorts and vacation houses in the Claveria highlands.</p>
         </div>
-        <span class="chip">14 places</span>
+        <span class="chip place-count">14 places</span>
       </div>
       <div class="search-bar">
+        <label class="sr-only" for="place-search">Search places</label>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <input id="place-search" type="search" placeholder="Search staycations &amp; resorts by name, barangay or tag" autocomplete="off">
       </div>
+
       <div class="card-grid" id="card-grid">
-<a class="place-card reveal" href="place/baqs-bonfires.html">
-  <div class="thumb"><img src="assets/img/staycation/baqs-bonfires/1.jpg" alt="Baqs&amp;Bonfires" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Baqs&amp;Bonfires</h3>
-    <span class="tagline">Exclusive mountain campground with bonfire nights</span>
-    <span class="loc">Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/victorias-haven.html">
-  <div class="thumb"><img src="assets/img/staycation/victorias-haven/1.jpg" alt="Victoria&#x27;s Haven" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Victoria&#x27;s Haven</h3>
-    <span class="tagline">Affordable, safe &amp; clean rest house near the Claveria–Gingoog route</span>
-    <span class="loc">San Roque, Doalnara, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/claveria-wooden-cabins.html">
-  <div class="thumb"><img src="assets/img/staycation/claveria-wooden-cabins/1.jpg" alt="Claveria Wooden Cabins" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Claveria Wooden Cabins</h3>
-    <span class="tagline">Cozy wooden cabins in the countryside</span>
-    <span class="loc">Barangay Aposkahoy, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/romualdas-vacation-house.html">
-  <div class="thumb"><img src="assets/img/staycation/romualdas-vacation-house/1.jpg" alt="Romualda&#x27;s Vacation House" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Romualda&#x27;s Vacation House</h3>
-    <span class="tagline">Private retreat with a pool overlooking the mountains</span>
-    <span class="loc">Barangay Mat-i, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/hiraya-farm-escape.html">
-  <div class="thumb"><img src="assets/img/staycation/hiraya-farm-escape/1.jpg" alt="Hiraya Farm Escape" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Hiraya Farm Escape</h3>
-    <span class="tagline">Highland leisure farm with ATV, go-karts &amp; rainbow slides</span>
-    <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/apovista-forest-park.html">
-  <div class="thumb"><img src="assets/img/staycation/apovista-forest-park/1.jpg" alt="ApoVista Forest Park and Campsite" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>ApoVista Forest Park and Campsite</h3>
-    <span class="tagline">Forest park &amp; overnight campsite (home of Lantawon Falls)</span>
-    <span class="loc">Sitio Lantawan, Aposkahoy, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/camp-zion.html">
-  <div class="thumb"><img src="assets/img/staycation/camp-zion/1.jpg" alt="Camp Zion Claveria" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Camp Zion Claveria</h3>
-    <span class="tagline">Weekend camping &amp; bonding destination</span>
-    <span class="loc">Barangay Panampawan, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/payag-ni-kuya.html">
-  <div class="thumb"><img src="assets/img/staycation/payag-ni-kuya/2.jpg" alt="Payag ni Kuya" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
-  <div class="body">
-    <h3>Payag ni Kuya</h3>
-    <span class="tagline">Cozy countryside retreat with nipa huts</span>
-    <span class="loc">Barangay Patrocinio, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/jilas-smallville.html">
-  <div class="thumb"><img src="assets/img/staycation/jilas-smallville/1.jpg" alt="JILA&#x27;s Smallville" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>JILA&#x27;s Smallville</h3>
-    <span class="tagline">“Just Imagine Life Away from the City” — flower farm &amp; photo spot</span>
-    <span class="loc">Sitio Macupa, Zone 6, Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/p-brother-mountain.html">
-  <div class="thumb"><img src="assets/img/staycation/p-brother-mountain/1.jpg" alt="PBrother&#x27;s Mountain View Resort" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>PBrother&#x27;s Mountain View Resort</h3>
-    <span class="tagline">Intimate hillside retreat with pool &amp; mountain views</span>
-    <span class="loc">Zone 4, Lower Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/janopolan-spring-resort.html">
-  <div class="thumb"><img src="assets/img/staycation/janopolan-spring-resort/1.jpg" alt="Janopolan Nature&#x27;s Spring" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Janopolan Nature&#x27;s Spring</h3>
-    <span class="tagline">Claveria&#x27;s classic spring &amp; pool eco-tourism retreat</span>
-    <span class="loc">Sitio Janopolan, Barangay Poblacion, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/cheenger-mountain-resort.html">
-  <div class="thumb"><img src="assets/img/staycation/cheenger-mountain-resort/1.jpg" alt="Chenenger Mountain Resort" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
-  <div class="body">
-    <h3>Chenenger Mountain Resort</h3>
-    <span class="tagline">Affordable home-style escape for barkada &amp; family outings</span>
-    <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/cabinscape-ridge-resort.html">
-  <div class="thumb"><img src="assets/img/staycation/cabinscape-ridge-resort/1.jpg" alt="Cabinscape Ridge Resort" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Cabinscape Ridge Resort</h3>
-    <span class="tagline">Nordic-inspired glamping in the misty highlands</span>
-    <span class="loc">Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/aikeeko-farmview-resort.html">
-  <div class="thumb"><img src="assets/img/staycation/aikeeko-farmview-resort/2.jpg" alt="Aikeeko Farmview Resort" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
-  <div class="body">
-    <h3>Aikeeko Farmview Resort</h3>
-    <span class="tagline">Floral farm turned mountain resort — “farmcations” &amp; digital detox</span>
-    <span class="loc">Purok 4, Brgy. Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
+<article class="place-card reveal" data-place-card data-place-slug="baqs-bonfires" data-tags="campground | bonfire | exclusive | group" data-search="Baqs&amp;Bonfires Exclusive mountain campground with bonfire nights Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental campground bonfire exclusive group">
+  <a class="place-card-link" href="place/baqs-bonfires.html">
+    <div class="thumb"><img src="assets/img/staycation/baqs-bonfires/1.jpg" alt="Baqs&amp;Bonfires" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Baqs&amp;Bonfires</h3>
+      <span class="tagline">Exclusive mountain campground with bonfire nights</span>
+      <span class="loc">Sitio Sumpong, Brgy. Madaguing, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="baqs-bonfires" data-place-name="Baqs&amp;Bonfires" aria-label="Save Baqs&amp;Bonfires" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="victorias-haven" data-tags="rest house | affordable | wifi" data-search="Victoria&#x27;s Haven Affordable, safe &amp; clean rest house near the Claveria–Gingoog route San Roque, Doalnara, Claveria, Misamis Oriental rest house affordable wifi">
+  <a class="place-card-link" href="place/victorias-haven.html">
+    <div class="thumb"><img src="assets/img/staycation/victorias-haven/1.jpg" alt="Victoria&#x27;s Haven" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Victoria&#x27;s Haven</h3>
+      <span class="tagline">Affordable, safe &amp; clean rest house near the Claveria–Gingoog route</span>
+      <span class="loc">San Roque, Doalnara, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="victorias-haven" data-place-name="Victoria&#x27;s Haven" aria-label="Save Victoria&#x27;s Haven" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="claveria-wooden-cabins" data-tags="cabin | countryside | relax" data-search="Claveria Wooden Cabins Cozy wooden cabins in the countryside Barangay Aposkahoy, Claveria, Misamis Oriental cabin countryside relax">
+  <a class="place-card-link" href="place/claveria-wooden-cabins.html">
+    <div class="thumb"><img src="assets/img/staycation/claveria-wooden-cabins/1.jpg" alt="Claveria Wooden Cabins" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Claveria Wooden Cabins</h3>
+      <span class="tagline">Cozy wooden cabins in the countryside</span>
+      <span class="loc">Barangay Aposkahoy, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="claveria-wooden-cabins" data-place-name="Claveria Wooden Cabins" aria-label="Save Claveria Wooden Cabins" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="romualdas-vacation-house" data-tags="vacation house | pool | family" data-search="Romualda&#x27;s Vacation House Private retreat with a pool overlooking the mountains Barangay Mat-i, Claveria, Misamis Oriental vacation house pool family">
+  <a class="place-card-link" href="place/romualdas-vacation-house.html">
+    <div class="thumb"><img src="assets/img/staycation/romualdas-vacation-house/1.jpg" alt="Romualda&#x27;s Vacation House" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Romualda&#x27;s Vacation House</h3>
+      <span class="tagline">Private retreat with a pool overlooking the mountains</span>
+      <span class="loc">Barangay Mat-i, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="romualdas-vacation-house" data-place-name="Romualda&#x27;s Vacation House" aria-label="Save Romualda&#x27;s Vacation House" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="hiraya-farm-escape" data-tags="farm | atv | family | activities" data-search="Hiraya Farm Escape Highland leisure farm with ATV, go-karts &amp; rainbow slides Barangay Lanise, Claveria, Misamis Oriental farm ATV family activities">
+  <a class="place-card-link" href="place/hiraya-farm-escape.html">
+    <div class="thumb"><img src="assets/img/staycation/hiraya-farm-escape/1.jpg" alt="Hiraya Farm Escape" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Hiraya Farm Escape</h3>
+      <span class="tagline">Highland leisure farm with ATV, go-karts &amp; rainbow slides</span>
+      <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="hiraya-farm-escape" data-place-name="Hiraya Farm Escape" aria-label="Save Hiraya Farm Escape" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="apovista-forest-park" data-tags="campsite | forest | overnight" data-search="ApoVista Forest Park and Campsite Forest park &amp; overnight campsite (home of Lantawon Falls) Sitio Lantawan, Aposkahoy, Claveria, Misamis Oriental campsite forest overnight">
+  <a class="place-card-link" href="place/apovista-forest-park.html">
+    <div class="thumb"><img src="assets/img/staycation/apovista-forest-park/1.jpg" alt="ApoVista Forest Park and Campsite" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>ApoVista Forest Park and Campsite</h3>
+      <span class="tagline">Forest park &amp; overnight campsite (home of Lantawon Falls)</span>
+      <span class="loc">Sitio Lantawan, Aposkahoy, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="apovista-forest-park" data-place-name="ApoVista Forest Park and Campsite" aria-label="Save ApoVista Forest Park and Campsite" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="camp-zion" data-tags="camping | weekend | nature" data-search="Camp Zion Claveria Weekend camping &amp; bonding destination Barangay Panampawan, Claveria, Misamis Oriental camping weekend nature">
+  <a class="place-card-link" href="place/camp-zion.html">
+    <div class="thumb"><img src="assets/img/staycation/camp-zion/1.jpg" alt="Camp Zion Claveria" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Camp Zion Claveria</h3>
+      <span class="tagline">Weekend camping &amp; bonding destination</span>
+      <span class="loc">Barangay Panampawan, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="camp-zion" data-place-name="Camp Zion Claveria" aria-label="Save Camp Zion Claveria" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="payag-ni-kuya" data-tags="campsite | nipa hut | countryside" data-search="Payag ni Kuya Cozy countryside retreat with nipa huts Barangay Patrocinio, Claveria, Misamis Oriental campsite nipa hut countryside">
+  <a class="place-card-link" href="place/payag-ni-kuya.html">
+    <div class="thumb"><img src="assets/img/staycation/payag-ni-kuya/2.jpg" alt="Payag ni Kuya" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
+    <div class="body">
+      <h3>Payag ni Kuya</h3>
+      <span class="tagline">Cozy countryside retreat with nipa huts</span>
+      <span class="loc">Barangay Patrocinio, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="payag-ni-kuya" data-place-name="Payag ni Kuya" aria-label="Save Payag ni Kuya" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="jilas-smallville" data-tags="flower farm | photoshoot | scenic" data-search="JILA&#x27;s Smallville “Just Imagine Life Away from the City” — flower farm &amp; photo spot Sitio Macupa, Zone 6, Barangay Lanise, Claveria, Misamis Oriental flower farm photoshoot scenic">
+  <a class="place-card-link" href="place/jilas-smallville.html">
+    <div class="thumb"><img src="assets/img/staycation/jilas-smallville/1.jpg" alt="JILA&#x27;s Smallville" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>JILA&#x27;s Smallville</h3>
+      <span class="tagline">“Just Imagine Life Away from the City” — flower farm &amp; photo spot</span>
+      <span class="loc">Sitio Macupa, Zone 6, Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="jilas-smallville" data-place-name="JILA&#x27;s Smallville" aria-label="Save JILA&#x27;s Smallville" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="p-brother-mountain" data-tags="resort | pool | mountain view" data-search="PBrother&#x27;s Mountain View Resort Intimate hillside retreat with pool &amp; mountain views Zone 4, Lower Lanise, Claveria, Misamis Oriental resort pool mountain view">
+  <a class="place-card-link" href="place/p-brother-mountain.html">
+    <div class="thumb"><img src="assets/img/staycation/p-brother-mountain/1.jpg" alt="PBrother&#x27;s Mountain View Resort" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>PBrother&#x27;s Mountain View Resort</h3>
+      <span class="tagline">Intimate hillside retreat with pool &amp; mountain views</span>
+      <span class="loc">Zone 4, Lower Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="p-brother-mountain" data-place-name="PBrother&#x27;s Mountain View Resort" aria-label="Save PBrother&#x27;s Mountain View Resort" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="janopolan-spring-resort" data-tags="spring | pool | eco-tourism | classic" data-search="Janopolan Nature&#x27;s Spring Claveria&#x27;s classic spring &amp; pool eco-tourism retreat Sitio Janopolan, Barangay Poblacion, Claveria, Misamis Oriental spring pool eco-tourism classic">
+  <a class="place-card-link" href="place/janopolan-spring-resort.html">
+    <div class="thumb"><img src="assets/img/staycation/janopolan-spring-resort/1.jpg" alt="Janopolan Nature&#x27;s Spring" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Janopolan Nature&#x27;s Spring</h3>
+      <span class="tagline">Claveria&#x27;s classic spring &amp; pool eco-tourism retreat</span>
+      <span class="loc">Sitio Janopolan, Barangay Poblacion, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="janopolan-spring-resort" data-place-name="Janopolan Nature&#x27;s Spring" aria-label="Save Janopolan Nature&#x27;s Spring" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="cheenger-mountain-resort" data-tags="resort | 24/7 | barkada | budget" data-search="Chenenger Mountain Resort Affordable home-style escape for barkada &amp; family outings Barangay Lanise, Claveria, Misamis Oriental resort 24/7 barkada budget">
+  <a class="place-card-link" href="place/cheenger-mountain-resort.html">
+    <div class="thumb"><img src="assets/img/staycation/cheenger-mountain-resort/1.jpg" alt="Chenenger Mountain Resort" loading="lazy" decoding="async"><span class="badge">5 photos</span></div>
+    <div class="body">
+      <h3>Chenenger Mountain Resort</h3>
+      <span class="tagline">Affordable home-style escape for barkada &amp; family outings</span>
+      <span class="loc">Barangay Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="cheenger-mountain-resort" data-place-name="Chenenger Mountain Resort" aria-label="Save Chenenger Mountain Resort" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="cabinscape-ridge-resort" data-tags="glamping | cabin | aesthetic | pool" data-search="Cabinscape Ridge Resort Nordic-inspired glamping in the misty highlands Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental glamping cabin aesthetic pool">
+  <a class="place-card-link" href="place/cabinscape-ridge-resort.html">
+    <div class="thumb"><img src="assets/img/staycation/cabinscape-ridge-resort/1.jpg" alt="Cabinscape Ridge Resort" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Cabinscape Ridge Resort</h3>
+      <span class="tagline">Nordic-inspired glamping in the misty highlands</span>
+      <span class="loc">Zone 1, Brgy. Mat-i, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="cabinscape-ridge-resort" data-place-name="Cabinscape Ridge Resort" aria-label="Save Cabinscape Ridge Resort" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="aikeeko-farmview-resort" data-tags="farm | farmcation | resort | flowers" data-search="Aikeeko Farmview Resort Floral farm turned mountain resort — “farmcations” &amp; digital detox Purok 4, Brgy. Lanise, Claveria, Misamis Oriental farm farmcation resort flowers">
+  <a class="place-card-link" href="place/aikeeko-farmview-resort.html">
+    <div class="thumb"><img src="assets/img/staycation/aikeeko-farmview-resort/2.jpg" alt="Aikeeko Farmview Resort" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
+    <div class="body">
+      <h3>Aikeeko Farmview Resort</h3>
+      <span class="tagline">Floral farm turned mountain resort — “farmcations” &amp; digital detox</span>
+      <span class="loc">Purok 4, Brgy. Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="aikeeko-farmview-resort" data-place-name="Aikeeko Farmview Resort" aria-label="Save Aikeeko Farmview Resort" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
       </div>
-      <div class="no-results" id="no-results">No places match your search. Try another name or barangay.</div>
+      <div class="no-results" id="no-results">No places match your search. Try another name, area, or filter.</div>
     </div>
   </section>
 </main>
@@ -172,6 +217,8 @@
       <div>
         <h4>Explore</h4>
         <ul>
+          <li><a href="map.html">Area map</a></li>
+          <li><a href="saved.html">Saved places</a></li>
           <li><a href="staycation.html">Staycations & Resorts</a></li>
           <li><a href="falls.html">Waterfalls</a></li>
           <li><a href="cafes.html">Coffee Shops & Restaurants</a></li>
@@ -194,6 +241,7 @@
     </div>
   </div>
 </footer>
+<nav class="mobile-tabbar" aria-label="Quick navigation"><a class="mobile-tab active" href="index.html" aria-current=page><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/></svg><span>Home</span></a><a class="mobile-tab " href="map.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg><span>Map</span></a><a class="mobile-tab " href="saved.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span>Saved</span><b class=tab-count data-saved-count></b></a><a class="mobile-tab " href="hotlines.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Hotlines</span></a></nav>
 <button class="back-top" aria-label="Back to top">Top</button><script src="assets/js/main.js" defer></script>
 </body>
 </html>

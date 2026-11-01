@@ -6,12 +6,13 @@ Built from the [Claveria Escape Google Drive folder](https://drive.google.com/dr
 
 ## Features
 - 14 staycations and resorts, 6 waterfalls, 12 cafés and restaurants, and 10 emergency hotline contacts
-- 32 place-detail pages with photo galleries, interactive OpenStreetMap embeds, Google Maps directions, contact actions, rates and hours
-- Category search, photo lightbox and tap-to-call hotline cards
-- Four map pins show the nearest mapped area rather than a verified exact feature; each page flags these and offers a Google Maps search
-- Mobile-first responsive layouts, touch-friendly controls, safe-area support and an accessible collapsible menu
-- Decorative emoji removed from the site UI in favor of photography, typography and clear labels
-- Static HTML, CSS and JavaScript; no server or build service required to serve the site
+- A mobile-first Explore → coffee-shop list → place detail flow, with search and filters based on the place data
+- 32 place-detail pages with photo galleries, interactive OpenStreetMap embeds, Google Maps directions, share/save/contact actions, rates and hours where supplied
+- Overview map with all 32 place pins, plus an OSM fallback; four pins are explicitly marked approximate
+- Saved places stored locally in the visitor's browser, category search, photo lightbox and tap-to-call hotline cards
+- Touch-friendly controls, safe-area support and an accessible collapsible menu
+- No fabricated ratings or reviews; decorative emoji removed in favor of photography, typography and clear labels
+- Static HTML, CSS and JavaScript; no application server required to serve the site. Map tiles are provided by OpenStreetMap.
 
 ## Project structure
 ```
@@ -20,9 +21,14 @@ staycation.html       # staycations and resorts
 falls.html            # waterfalls
 cafes.html            # cafés and restaurants
 hotlines.html         # emergency hotlines
+map.html              # interactive overview map and location directory
+saved.html            # browser-local saved-place list
 place/<slug>.html     # 32 detail pages
 assets/css/style.css  # responsive styles
-assets/js/main.js     # navigation, search, lightbox and reveal behavior
+assets/js/main.js     # navigation, search, favorites, share and galleries
+assets/js/map.js      # overview map pins and map filters
+assets/js/leaflet.js  # locally served Leaflet library
+assets/vendor/leaflet # Leaflet stylesheet and license
 assets/img/...        # optimized photos and brand assets
 data/places.json      # structured place data and map coordinates
 data/map_locations.json # map pins for individual places

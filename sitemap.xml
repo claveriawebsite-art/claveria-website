@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://claveria-website-ovus.vercel.app/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://claveria-website-ovus.vercel.app/map.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://claveria-website-ovus.vercel.app/saved.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://claveria-website-ovus.vercel.app/staycation.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://claveria-website-ovus.vercel.app/falls.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://claveria-website-ovus.vercel.app/cafes.html</loc><changefreq>weekly</changefreq></url>

@@ -27,71 +27,92 @@
     <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation"><a href="index.html" class=" ">Home</a><a href="staycation.html" class=" ">Staycations</a><a href="falls.html" class="active ">Falls</a><a href="cafes.html" class=" ">Cafés & Restos</a><a href="hotlines.html" class=" hot">Hotlines</a></nav>
   </div>
 </header>
-<main>
-  <section class="section" style="padding-bottom:20px">
+<main class="app-screen category-screen">
+  <section class="section category-section" style="padding-bottom:20px">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head category-heading">
         <div>
           <span class="eyebrow">Explore Claveria</span>
           <h2>Waterfalls</h2>
           <p>Cool, refreshing falls scattered across Claveria&#x27;s barangays.</p>
         </div>
-        <span class="chip">6 places</span>
+        <span class="chip place-count">6 places</span>
       </div>
       <div class="search-bar">
+        <label class="sr-only" for="place-search">Search places</label>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <input id="place-search" type="search" placeholder="Search waterfalls by name, barangay or tag" autocomplete="off">
       </div>
+
       <div class="card-grid" id="card-grid">
-<a class="place-card reveal" href="place/mailig-falls.html">
-  <div class="thumb"><img src="assets/img/falls/mailig-falls/1.jpg" alt="Mailig Falls" loading="lazy" decoding="async"><span class="badge">2 photos</span></div>
-  <div class="body">
-    <h3>Mailig Falls</h3>
-    <span class="tagline">Free-entry falls in Malagana</span>
-    <span class="loc">Malagana, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/lantawon-falls.html">
-  <div class="thumb"><img src="assets/img/falls/lantawon-falls/1.jpg" alt="Lantawon Falls" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
-  <div class="body">
-    <h3>Lantawon Falls</h3>
-    <span class="tagline">The falls inside ApoVista Forest Park</span>
-    <span class="loc">ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/twin-falls.html">
-  <div class="thumb"><img src="assets/img/falls/twin-falls/1.jpg" alt="Twin Falls" loading="lazy" decoding="async"><span class="badge warn">Temporarily closed</span></div>
-  <div class="body">
-    <h3>Twin Falls</h3>
-    <span class="tagline">Mat-i&#x27;s twin waterfalls (check status before visiting)</span>
-    <span class="loc">Mat-i, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/bindol-falls.html">
-  <div class="thumb"><img src="assets/img/falls/bindol-falls/1.jpg" alt="Bindol Falls" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Bindol Falls</h3>
-    <span class="tagline">Free waterfall in Lanise</span>
-    <span class="loc">Lanise, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/nasaad-falls.html">
-  <div class="thumb"><img src="assets/img/falls/nasaad-falls/1.jpg" alt="Nasaad Falls" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
-  <div class="body">
-    <h3>Nasaad Falls</h3>
-    <span class="tagline">₱10-all-ages falls with cottage rentals</span>
-    <span class="loc">Aposkahoy, Claveria, Misamis Oriental</span>
-  </div>
-</a>
-<a class="place-card reveal" href="place/kilobag-falls.html">
-  <div class="thumb"><img src="assets/img/falls/kilobag-falls/1.jpg" alt="Kibolag Falls" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
-  <div class="body">
-    <h3>Kibolag Falls</h3>
-    <span class="tagline">₱200 entry includes free falls access &amp; free ride</span>
-    <span class="loc">Villa Cascadia, Route 955, Claveria, Misamis Oriental</span>
-  </div>
-</a>
+<article class="place-card reveal" data-place-card data-place-slug="mailig-falls" data-tags="waterfall | free" data-search="Mailig Falls Free-entry falls in Malagana Malagana, Claveria, Misamis Oriental waterfall free">
+  <a class="place-card-link" href="place/mailig-falls.html">
+    <div class="thumb"><img src="assets/img/falls/mailig-falls/1.jpg" alt="Mailig Falls" loading="lazy" decoding="async"><span class="badge">2 photos</span></div>
+    <div class="body">
+      <h3>Mailig Falls</h3>
+      <span class="tagline">Free-entry falls in Malagana</span>
+      <span class="loc">Malagana, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="mailig-falls" data-place-name="Mailig Falls" aria-label="Save Mailig Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="lantawon-falls" data-tags="waterfall | forest park" data-search="Lantawon Falls The falls inside ApoVista Forest Park ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental waterfall forest park">
+  <a class="place-card-link" href="place/lantawon-falls.html">
+    <div class="thumb"><img src="assets/img/falls/lantawon-falls/1.jpg" alt="Lantawon Falls" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
+    <div class="body">
+      <h3>Lantawon Falls</h3>
+      <span class="tagline">The falls inside ApoVista Forest Park</span>
+      <span class="loc">ApoVista Forest Park and Campsite, Aposkahoy, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="lantawon-falls" data-place-name="Lantawon Falls" aria-label="Save Lantawon Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="twin-falls" data-tags="waterfall | temporarily closed" data-search="Twin Falls Mat-i&#x27;s twin waterfalls (check status before visiting) Mat-i, Claveria, Misamis Oriental waterfall temporarily closed">
+  <a class="place-card-link" href="place/twin-falls.html">
+    <div class="thumb"><img src="assets/img/falls/twin-falls/1.jpg" alt="Twin Falls" loading="lazy" decoding="async"><span class="badge warn">Temporarily closed</span></div>
+    <div class="body">
+      <h3>Twin Falls</h3>
+      <span class="tagline">Mat-i&#x27;s twin waterfalls (check status before visiting)</span>
+      <span class="loc">Mat-i, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="twin-falls" data-place-name="Twin Falls" aria-label="Save Twin Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="bindol-falls" data-tags="waterfall | free" data-search="Bindol Falls Free waterfall in Lanise Lanise, Claveria, Misamis Oriental waterfall free">
+  <a class="place-card-link" href="place/bindol-falls.html">
+    <div class="thumb"><img src="assets/img/falls/bindol-falls/1.jpg" alt="Bindol Falls" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Bindol Falls</h3>
+      <span class="tagline">Free waterfall in Lanise</span>
+      <span class="loc">Lanise, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="bindol-falls" data-place-name="Bindol Falls" aria-label="Save Bindol Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="nasaad-falls" data-tags="waterfall | cottage | budget" data-search="Nasaad Falls ₱10-all-ages falls with cottage rentals Aposkahoy, Claveria, Misamis Oriental waterfall cottage budget">
+  <a class="place-card-link" href="place/nasaad-falls.html">
+    <div class="thumb"><img src="assets/img/falls/nasaad-falls/1.jpg" alt="Nasaad Falls" loading="lazy" decoding="async"><span class="badge">3 photos</span></div>
+    <div class="body">
+      <h3>Nasaad Falls</h3>
+      <span class="tagline">₱10-all-ages falls with cottage rentals</span>
+      <span class="loc">Aposkahoy, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="nasaad-falls" data-place-name="Nasaad Falls" aria-label="Save Nasaad Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
+<article class="place-card reveal" data-place-card data-place-slug="kilobag-falls" data-tags="waterfall | ride included" data-search="Kibolag Falls ₱200 entry includes free falls access &amp; free ride Villa Cascadia, Route 955, Claveria, Misamis Oriental waterfall ride included">
+  <a class="place-card-link" href="place/kilobag-falls.html">
+    <div class="thumb"><img src="assets/img/falls/kilobag-falls/1.jpg" alt="Kibolag Falls" loading="lazy" decoding="async"><span class="badge">4 photos</span></div>
+    <div class="body">
+      <h3>Kibolag Falls</h3>
+      <span class="tagline">₱200 entry includes free falls access &amp; free ride</span>
+      <span class="loc">Villa Cascadia, Route 955, Claveria, Misamis Oriental</span>
+    </div>
+  </a>
+  <button class="save-toggle" type="button" data-save-place="kilobag-falls" data-place-name="Kibolag Falls" aria-label="Save Kibolag Falls" aria-pressed="false" title="Save place"><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span class="sr-only">Save place</span></button>
+</article>
       </div>
-      <div class="no-results" id="no-results">No places match your search. Try another name or barangay.</div>
+      <div class="no-results" id="no-results">No places match your search. Try another name, area, or filter.</div>
     </div>
   </section>
 </main>
@@ -108,6 +129,8 @@
       <div>
         <h4>Explore</h4>
         <ul>
+          <li><a href="map.html">Area map</a></li>
+          <li><a href="saved.html">Saved places</a></li>
           <li><a href="staycation.html">Staycations & Resorts</a></li>
           <li><a href="falls.html">Waterfalls</a></li>
           <li><a href="cafes.html">Coffee Shops & Restaurants</a></li>
@@ -130,6 +153,7 @@
     </div>
   </div>
 </footer>
+<nav class="mobile-tabbar" aria-label="Quick navigation"><a class="mobile-tab active" href="index.html" aria-current=page><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/></svg><span>Home</span></a><a class="mobile-tab " href="map.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg><span>Map</span></a><a class="mobile-tab " href="saved.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.8c0 5.5-8.8 11.2-8.8 11.2S3.2 14.3 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg><span>Saved</span><b class=tab-count data-saved-count></b></a><a class="mobile-tab " href="hotlines.html" ><svg class="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Hotlines</span></a></nav>
 <button class="back-top" aria-label="Back to top">Top</button><script src="assets/js/main.js" defer></script>
 </body>
 </html>
