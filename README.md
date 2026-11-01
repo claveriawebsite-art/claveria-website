@@ -6,8 +6,9 @@ Built from the [Claveria Escape Google Drive folder](https://drive.google.com/dr
 
 ## Features
 - 14 staycations and resorts, 6 waterfalls, 12 cafés and restaurants, and 10 emergency hotline contacts
-- 32 place-detail pages with photo galleries, maps links, contact actions, rates and hours
+- 32 place-detail pages with photo galleries, interactive OpenStreetMap embeds, Google Maps directions, contact actions, rates and hours
 - Category search, photo lightbox and tap-to-call hotline cards
+- Four map pins show the nearest mapped area rather than a verified exact feature; each page flags these and offers a Google Maps search
 - Mobile-first responsive layouts, touch-friendly controls, safe-area support and an accessible collapsible menu
 - Decorative emoji removed from the site UI in favor of photography, typography and clear labels
 - Static HTML, CSS and JavaScript; no server or build service required to serve the site
@@ -23,7 +24,8 @@ place/<slug>.html     # 32 detail pages
 assets/css/style.css  # responsive styles
 assets/js/main.js     # navigation, search, lightbox and reveal behavior
 assets/img/...        # optimized photos and brand assets
-data/places.json      # structured place data
+data/places.json      # structured place data and map coordinates
+data/map_locations.json # map pins for individual places
 tools/                # image and site-generation scripts
 sitemap.xml
 ```

@@ -11,6 +11,9 @@ from site_data import SITE, CATEGORIES, PLACES, HOTLINES, HOTLINE_GROUPS
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 IMG = os.path.join(ROOT, "assets", "img")
+with open(os.path.join(ROOT, "data", "map_locations.json"), encoding="utf-8") as f:
+    MAP_LOCATIONS = json.load(f)
+MAP_APPROXIMATE = {"mailig-falls", "bindol-falls", "lantawon-falls", "hamugaway-ni-dodongstan"}
 
 
 def plain(s):
@@ -45,6 +48,15 @@ def clean_data(value):
 
 def maps_url(q):
     return "https://www.google.com/maps/search/?api=1&query=" + quote(q)
+
+
+def osm_embed_url(slug):
+    point = MAP_LOCATIONS.get(slug, {"lat": 8.6119415, "lon": 124.8933887})
+    lat, lon = float(point["lat"]), float(point["lon"])
+    lat_pad, lon_pad = 0.009, 0.009
+    bbox = f"{lon - lon_pad:.6f},{lat - lat_pad:.6f},{lon + lon_pad:.6f},{lat + lat_pad:.6f}"
+    marker = f"{lat:.7f},{lon:.7f}"
+    return "https://www.openstreetmap.org/export/embed.html?bbox=" + quote(bbox, safe=",") + "&layer=mapnik&marker=" + quote(marker, safe=",")
 
 
 def img_dir(cat, slug):
@@ -235,6 +247,25 @@ def place_page(p):
     related_cards = "\n".join(place_card(q, "../") for q in related)
 
     warn_chip = '<span class="chip warn">Temporarily closed</span>' if p["slug"] == "twin-falls" else ""
+    map_note = (
+        "Pin marks the nearest mapped area; use Google Maps to verify the exact spot and plan directions."
+        if p["slug"] in MAP_APPROXIMATE
+        else "Pan or zoom to explore. Use Google Maps for turn-by-turn directions."
+    )
+    map_html = f'''<section class="place-map reveal" aria-labelledby="place-map-title">
+  <div class="place-map-head">
+    <div>
+      <span class="eyebrow">Location</span>
+      <h2 id="place-map-title">Explore the area</h2>
+      <p>{esc(p["location"])}</p>
+    </div>
+    <a class="btn btn-green map-directions" href="{esc(maps_url(p["maps_query"]))}" target="_blank" rel="noopener">Directions on Google Maps</a>
+  </div>
+  <div class="map-frame">
+    <iframe title="Interactive map for {esc(p["name"])}" src="{esc(osm_embed_url(p["slug"]))}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <p class="map-note">{esc(map_note)} Map data © OpenStreetMap contributors.</p>
+</section>'''
     body = f'''{header(prefix, p["category"])}
 <main>
   <div class="wrap">
@@ -263,7 +294,6 @@ def place_page(p):
         <div class="info-block">
           <div class="label">Location</div>
           <p>{esc(p["location"])}</p>
-          <p style="margin-top:8px"><a class="btn btn-green" href="{esc(maps_url(p["maps_query"]))}" target="_blank" rel="noopener">View on Google Maps</a></p>
         </div>
         <div class="info-block">
           <div class="label">Contact</div>
@@ -272,6 +302,7 @@ def place_page(p):
         {extras}
       </aside>
     </div>
+    {map_html}
     <section class="related">
       <h2>More {esc(cat["title"].lower())} in Claveria</h2>
       <div class="card-grid">
@@ -461,7 +492,7 @@ def data_json():
     for p in PLACES:
         out.append({**p, "images": place_images(p)})
     with open(os.path.join(ROOT, "data", "places.json"), "w", encoding="utf-8") as f:
-        json.dump(clean_data({"site": SITE, "categories": CATEGORIES, "places": out, "hotlines": HOTLINES}), f, ensure_ascii=False, indent=2)
+        json.dump(clean_data({"site": SITE, "categories": CATEGORIES, "places": out, "hotlines": HOTLINES, "map_locations": MAP_LOCATIONS}), f, ensure_ascii=False, indent=2)
     print("wrote data/places.json")
 
 

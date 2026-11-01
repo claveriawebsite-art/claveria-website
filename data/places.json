@@ -1287,5 +1287,230 @@
       "911",
       "tel:911"
     ]
-  ]
+  ],
+  "map_locations": {
+    "baqs-bonfires": {
+      "lat": 8.6654772,
+      "lon": 124.8909191,
+      "label": "Baqs&Bonfires, Sitio Sumpong Brgy, Madaguing, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd999fe9ff25:0x20bad82c422de26f",
+      "matched_query": "Baqs Bonfires Sitio Sumpong Madaguing Claveria Misamis Oriental"
+    },
+    "victorias-haven": {
+      "lat": 8.6951938,
+      "lon": 124.9934882,
+      "label": "MXWV+39H Victoria's Haven (exact spot), Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffd90054e249b5:0x87baf8630f5cebdc",
+      "matched_query": "Victoria's Haven San Roque Doalnara Claveria Misamis Oriental"
+    },
+    "claveria-wooden-cabins": {
+      "lat": 8.696782599999999,
+      "lon": 124.9948414,
+      "label": "MXWW+X37 Claveria Wooden Cabins, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffd9bfce67d873:0x57c13cf9ec69947f",
+      "matched_query": "Claveria Wooden Cabins Aposkahoy Claveria Misamis Oriental"
+    },
+    "romualdas-vacation-house": {
+      "lat": 8.6326039,
+      "lon": 124.9724873,
+      "label": "Romualda's Vacation House, Claveria Rd, Mat-i, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffdbd3a8b1f405:0x34aa13e1519b004",
+      "matched_query": "Romualda's Vacation House Mat-i Claveria Misamis Oriental"
+    },
+    "hiraya-farm-escape": {
+      "lat": 8.6298125,
+      "lon": 124.9485625,
+      "label": "JWHX+WC Hiraya Farm Escape, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffd96213c8b75d:0xc2c4148cd9d1065e",
+      "matched_query": "Hiraya Farm Escape Lanise Claveria Misamis Oriental"
+    },
+    "apovista-forest-park": {
+      "lat": 8.688577,
+      "lon": 124.992465,
+      "label": "APOVISTA FOREST PARK AND CAMPSITE, National Highway Sitio Lantawon, Aposkahoy, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffd9799e1c1bf5:0x633534a42d6537fa",
+      "matched_query": "ApoVista Forest Park and Campsite Aposkahoy Claveria Misamis Oriental"
+    },
+    "camp-zion": {
+      "lat": 8.6579823,
+      "lon": 124.905521,
+      "label": "MW54+56R Camp ZION, Brgy, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd60930df5d5:0x2f9b4b4a9f4f4729",
+      "matched_query": "Camp Zion Claveria Panampawan Claveria Misamis Oriental"
+    },
+    "payag-ni-kuya": {
+      "lat": 8.6113067,
+      "lon": 124.8492882,
+      "label": "Payag ni Kuya, Barangay Patrocinio, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffe75222f7b545:0xd1e95c622284021d",
+      "matched_query": "Payag ni Kuya Patrocinio Claveria Misamis Oriental"
+    },
+    "jilas-smallville": {
+      "lat": 8.6319542,
+      "lon": 124.9595209,
+      "label": "JILAs SmallVille, Sitio Macopa Zone 6, Lanise, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffdb7e35b1506d:0x68c61b7a84b130b9",
+      "matched_query": "JILA's Smallville Sitio Macupa Lanise Claveria Misamis Oriental"
+    },
+    "p-brother-mountain": {
+      "lat": 8.6374379,
+      "lon": 124.9373311,
+      "label": "Zone 8, P.BROTHERS MOUNTAIN VIEW RESORT, Luna, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd8724ae23cf:0x683a072fec5ac23",
+      "matched_query": "PBrother Mountain View Resort Lower Lanise Claveria Misamis Oriental"
+    },
+    "janopolan-spring-resort": {
+      "lat": 8.635050399999999,
+      "lon": 124.9093957,
+      "label": "Janopolan Nature's Spring and Pool, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffddcce9113c01:0xf174b3f45cc7281f",
+      "matched_query": "Janopolan Nature's Spring Resort Poblacion Claveria Misamis Oriental"
+    },
+    "cheenger-mountain-resort": {
+      "lat": 8.636607399999999,
+      "lon": 124.9360825,
+      "label": "Chenenger Mountain Resort, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd7f9ccfe387:0xd0dc21f3c17b0427",
+      "matched_query": "Chenenger Mountain Resort Lanise Claveria Misamis Oriental"
+    },
+    "cabinscape-ridge-resort": {
+      "lat": 8.6326196,
+      "lon": 124.9733134,
+      "label": "Cabinscape Ridge Resort, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdb03a4956299:0xac08fd173eb6e92b",
+      "matched_query": "Cabinscape Ridge Resort Mat-i Claveria Misamis Oriental"
+    },
+    "aikeeko-farmview-resort": {
+      "lat": 8.634085599999999,
+      "lon": 124.938034,
+      "label": "Aikeeko Farm View Resort, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd83c7f19777:0x3f0852e947c99d8",
+      "matched_query": "Aikeeko Farmview Resort Lanise Claveria Misamis Oriental"
+    },
+    "mailig-falls": {
+      "lat": 8.668816099999999,
+      "lon": 124.9341234,
+      "label": "Malagana, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffde98322a44c3:0xf4d73c53ce5e6dae",
+      "matched_query": "Malagana Claveria Misamis Oriental"
+    },
+    "lantawon-falls": {
+      "lat": 8.688577,
+      "lon": 124.992465,
+      "label": "APOVISTA FOREST PARK AND CAMPSITE, National Highway Sitio Lantawon, Aposkahoy, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffd9799e1c1bf5:0x633534a42d6537fa",
+      "matched_query": "Lantawon Falls ApoVista Forest Park Aposkahoy Claveria Misamis Oriental"
+    },
+    "twin-falls": {
+      "lat": 8.6401563,
+      "lon": 124.9729539,
+      "label": "JXRF+358 Mat-i Twin Falls, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdb1a42debcb3:0xe4e026fb35783d3b",
+      "matched_query": "Twin Falls Mat-i Claveria Misamis Oriental"
+    },
+    "bindol-falls": {
+      "lat": 8.611746199999999,
+      "lon": 124.9451498,
+      "label": "Lanise, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdc9a90663d53:0x7960bd46d212252a",
+      "matched_query": "Lanise Claveria Misamis Oriental"
+    },
+    "nasaad-falls": {
+      "lat": 8.678781899999999,
+      "lon": 124.9727096,
+      "label": "MXHF+G38 Nasaad Falls, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffd9310a1d08b7:0xabef69e06ac7691d",
+      "matched_query": "Nasaad Falls Aposkahoy Claveria Misamis Oriental"
+    },
+    "kilobag-falls": {
+      "lat": 8.657602599999999,
+      "lon": 124.9944263,
+      "label": "MX5V+2QV Kilobag Falls, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdb01459c4665:0xaa92a7a4b5e623cd",
+      "matched_query": "Kibolag Falls Claveria Misamis Oriental"
+    },
+    "jacos-stopover": {
+      "lat": 8.6475428,
+      "lon": 124.9207222,
+      "label": "Zone 1, 𝐵, JaCo's Stopover, Route 955, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffdc3888abcab3:0x78d139867bdbf2be",
+      "matched_query": "JaCo's Stopover Barangay Luna Route 955 Claveria Misamis Oriental"
+    },
+    "the-promise-cafe": {
+      "lat": 8.667045,
+      "lon": 124.9872249,
+      "label": "The Promise Cafe, Claveria Rd, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffd9327da24925:0x887747873af07a82",
+      "matched_query": "The Promise Cafe Claveria Road Claveria Misamis Oriental"
+    },
+    "kasadya-cafe": {
+      "lat": 8.645670599999999,
+      "lon": 124.9138159,
+      "label": "Kasadya Cafe, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd9b709c750f:0x73ad704facdc4bb",
+      "matched_query": "Kasadya Cafe Tamboboan Claveria Misamis Oriental"
+    },
+    "the-sibs-coffee": {
+      "lat": 8.611575799999999,
+      "lon": 124.8885608,
+      "label": "JV6Q+JCM The Sibs Coffee, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd002dd01ec5:0xafd83753eccb65bb",
+      "matched_query": "The Sibs Coffee Claveria Misamis Oriental"
+    },
+    "the-haze-kaffe": {
+      "lat": 8.7037493,
+      "lon": 125.0138948,
+      "label": "P237+FHR The Haze Kaffe, Claveria Rd, Gingoog City, Misamis Oriental, Philippines",
+      "place_id": "0x32ffd9fda604c703:0xa0ca9cc0a40540e8",
+      "matched_query": "The Haze Kaffe Route 955 Gingoog Claveria Misamis Oriental"
+    },
+    "sanctum-by-cnc": {
+      "lat": 8.608457999999999,
+      "lon": 124.8924179,
+      "label": "JV5R+9XM SANCTUM CAFE, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd0065ef0a1f:0xb9da2fca0f035c78",
+      "matched_query": "Sanctum by CNC Cafe Magantol Village Poblacion Claveria Misamis Oriental"
+    },
+    "chelseas-cafe-restaurant": {
+      "lat": 8.6302456,
+      "lon": 124.9491346,
+      "label": "JWJX+3MR Chelsea's Café and Restaurant, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd000b2c3937:0xb0f1ea71181ddfe4",
+      "matched_query": "Chelsea's Cafe and Restaurant Lanise Claveria Misamis Oriental"
+    },
+    "julios-cafe-restaurant": {
+      "lat": 8.6565466,
+      "lon": 124.9937145,
+      "label": "Julio’s, Purok 8 sitio dal-as, Mat-i, Claveria, 9004 Misamis Oriental, Philippines",
+      "place_id": "0x32ffdb7ffef5189f:0xa4c0901b2be5865d",
+      "matched_query": "Julio's Cafe and Restaurant Mat-i Route 955 Claveria Misamis Oriental"
+    },
+    "lone-wolf-cafe": {
+      "lat": 8.63902,
+      "lon": 124.930302,
+      "label": "JWQJ+J43 The Lone Wolf Cafe - Claveria, Brgy Luna, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdd007d1abe8f:0x60d33b3bf4015537",
+      "matched_query": "Lone Wolf Cafe Brgy Luna Claveria Misamis Oriental"
+    },
+    "don-narciso-cafe": {
+      "lat": 8.6334429,
+      "lon": 124.9661362,
+      "label": "Don Narciso Café, Claveria, Misamis Oriental, Philippines",
+      "place_id": "0x32ffdbf6c1f34e5b:0x56155e85a91fcda9",
+      "matched_query": "Don Narciso Cafe Zone 6 Lanise Claveria Misamis Oriental"
+    },
+    "skye-88-cafe": {
+      "lat": 8.6299627,
+      "lon": 124.948748,
+      "label": "Skye 88 Cafe, Lanise, Claveria, 9000 Misamis Oriental, Philippines",
+      "place_id": "0x32ffddc28fcbc89f:0x3ec7ca45460b8e6",
+      "matched_query": "Skye 88 Cafe Hiraya Farm Escape Lanise Claveria Misamis Oriental"
+    },
+    "hamugaway-ni-dodongstan": {
+      "lat": 8.6536875,
+      "lon": 124.9919375,
+      "label": "Hamugaway ni Dodongstan, Claveria, Misamis Oriental, Philippines",
+      "approximate": true
+    }
+  }
 }
