@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# raw downloads (not committed — images are optimized into assets/img)
+raw/
+tools/__pycache__/
+
+# local env
+.env
+.env.local
